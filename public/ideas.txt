@@ -1,0 +1,30 @@
+// website names for Green Roots (dominio)
+greenrootscol.co ^
+
+// websites 
+https://nabbis.com.co/
+https://justcbd.com.co
+https://cannapp.com.co
+
+------------------------------------------------------------------------------------
+
+// Atomic Design - Brad Frost
+
+Nowadays websites are being developed from the ground up,
+meaning we first think about the individual pieces that make up the whole system.
+
+Atomic Deisgn proposes that we create digital products similiar to how things 
+in the material world are made:
+
+  ->Atoms ->Molecules ->Organisms ->Templates ->Pages
+
+  -This approach lets us focus on the main structure of the website first and
+  add styles, typography, color, etc, at the end of the process where its easier 
+  to make changes based on the client's feedback.
+
+Benefits of stablishing a pattern library under this Design filosophy:
+
+  1. Easier to test.
+  2. Better workflow.
+  3. Shared vocabulary.
+  4. Useful reference.
