@@ -5,6 +5,10 @@ type navItem = {
 
 export const navItems: navItem[] = [
   {
+    name: "Inicio",
+    href: "/",
+  },
+  {
     name: "Tienda",
     href: "/tienda",
   },

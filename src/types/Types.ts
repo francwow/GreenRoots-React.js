@@ -6,3 +6,5 @@ export type HeaderProps = {
 export type CursorContextType = boolean;
 
 export type MenuActiveType = boolean;
+
+export type ScrollContextType = boolean;

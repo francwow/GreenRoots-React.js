@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useMediaQuery } from "usehooks-ts";
-import { MenuActiveType, CursorContextType } from "../types/Types";
+import {
+  MenuActiveType,
+  CursorContextType,
+  ScrollContextType,
+} from "../types/Types";
 import MenuActiveContext from "../context/menuActiveContext";
 import CursorContext from "../context/cursorContext";
 import Inicio from "./Inicio";
@@ -11,27 +15,52 @@ import Nosotros from "./Nosotros";
 import Contacto from "./Contacto";
 import Header from "./Header";
 import Cursor from "./Cursor";
+import ScrollContext from "../context/scrollContext";
+import ScrollTop from "./ScrollTop";
 
 function App() {
   const [menuActive, setMenuActive] = useState<MenuActiveType>(false);
   const [hoverLink, setHoverLink] = useState<CursorContextType>(false);
-  const deskTop = useMediaQuery("(min-width: 991px)");
+  const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const deskTop = useMediaQuery("(min-width: 961px)");
+
+  function scrollHandle() {
+    let noScroll = 0;
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      if (scrolled > noScroll) {
+        setScrollDown(true);
+      } else if (scrolled < noScroll) {
+        setScrollDown(false);
+      }
+      noScroll = scrolled <= 0 ? 0 : scrolled;
+    });
+  }
+
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
+    scrollHandle();
+  }, []);
 
   return (
     <BrowserRouter>
-      <MenuActiveContext.Provider value={menuActive}>
-        <CursorContext.Provider value={hoverLink}>
-          {deskTop ? <Cursor /> : null}
-          <Header setHoverLink={setHoverLink} setMenuActive={setMenuActive} />
-          <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/tienda" element={<Tienda />} />
-            <Route path="/cbd" element={<CBD />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/contacto" element={<Contacto />} />
-          </Routes>
-        </CursorContext.Provider>
-      </MenuActiveContext.Provider>
+      <ScrollTop />
+      <ScrollContext.Provider value={scrollDown}>
+        <MenuActiveContext.Provider value={menuActive}>
+          <CursorContext.Provider value={hoverLink}>
+            {deskTop ? <Cursor /> : null}
+            <Header setHoverLink={setHoverLink} setMenuActive={setMenuActive} />
+            <Routes>
+              <Route path="/" element={<Inicio />} />
+              <Route path="/tienda" element={<Tienda />} />
+              <Route path="/cbd" element={<CBD />} />
+              <Route path="/nosotros" element={<Nosotros />} />
+              <Route path="/contacto" element={<Contacto />} />
+            </Routes>
+          </CursorContext.Provider>
+        </MenuActiveContext.Provider>
+      </ScrollContext.Provider>
     </BrowserRouter>
   );
 }

@@ -19,6 +19,7 @@
 
 /* General styles */
 html {
+  overflow-x: hidden;
   cursor: none !important;
   background-color: #ffff;
   box-sizing: border-box;
@@ -29,6 +30,9 @@ body {
   scroll-behavior: smooth;
   --font-fallback: "HelveticaNeue", Helvetica, Arial;
   --font-body: "Montserrat", var(--font-fallback);
+  --font-rebeqa: "Rebeqa";
+  --font-josefin: "Josefin Sans";
+  --font-gaston-jacklyn: "Gaston-Jacklyn";
   --dark-green: #012321;
   --light-green: #516d58;
   --brown: #571b1a;
@@ -42,7 +46,6 @@ body {
 h1 {
   font-weight: 400;
   font-style: italic;
-  border-bottom: 1px solid black;
 }
 
 a {
@@ -64,18 +67,21 @@ ul {
 }
 
 /* Mobile first */
+.main-wrapper {
+  height: 200vh;
+}
 
 /* Cursor */
 .dot {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  --x-px: calc(var(--x) * 1px);
+  --y-px: calc(var(--y) * 1px);
+  position: fixed;
   width: 24px;
   height: 24px;
   background-color: #ffcfd7;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 999;
+  transform: translate(calc(var(--x-px) - 50%), calc(var(--y-px) - 50%));
+  z-index: 9999;
   mix-blend-mode: difference;
   pointer-events: none;
   transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1) width,
@@ -95,15 +101,17 @@ ul {
   bottom: auto;
   right: 0;
   left: 0;
-  height: 150px;
-  transform: translate3d(0, -50px, 0);
+  height: 50px;
+  transform: translate3d(0, 0, 0);
   justify-content: space-between;
   background-color: var(--dark-green);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  z-index: 999;
 }
 
-.show {
-  transform: translate3d(0, 0, 0);
+.scrolled {
+  opacity: 0.8;
+  transform: translate3d(0, -40px, 0);
 }
 
 .header-container {
@@ -122,10 +130,6 @@ ul {
   flex-direction: column;
 }
 
-.logo-container {
-  width: 40px;
-}
-
 /* nav */
 .main-nav {
   width: 100%;
@@ -139,7 +143,7 @@ ul {
 }
 
 .nav-list-item a {
-  font-size: 1rem;
+  font-size: 0.8rem;
   letter-spacing: 0.5px;
   color: var(--beige);
 }
@@ -193,4 +197,42 @@ ul {
 .burger-btn:hover .line_2,
 .burger-btn:hover .line_3 {
   width: 35px;
+}
+
+.burger-btn:hover {
+  cursor: none !important;
+}
+
+/* <Inicio /> */
+.brand-banner {
+  width: 100%;
+  height: 200px;
+  transform: translate3d(0, 50px, 0);
+  background-image: url(/public/background.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.heading-text {
+  font-family: var(--font-josefin);
+  font-weight: 400;
+  color: var(--beige);
+  margin: 0;
+  letter-spacing: 0.4px;
+}
+
+.move-up {
+  transform: translate3d(0, 0, 0);
+}
+
+.logo-container {
+  width: 70px;
+}
+
+/* media queries */
+@media screen and (min-width: 961px) {
 }

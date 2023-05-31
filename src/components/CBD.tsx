@@ -1,5 +1,5 @@
 const CBD = () => {
-  return <h1>hello</h1>;
+  return <div className="main-wrapper"></div>;
 };
 
 export default CBD;
