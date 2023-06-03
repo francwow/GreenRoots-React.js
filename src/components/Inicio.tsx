@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import ScrollContext from "../context/scrollContext";
+import Carousel from "./Carousel";
 
 const Inicio = (props) => {
   const scrollDown = useContext(ScrollContext);
@@ -19,10 +20,11 @@ const Inicio = (props) => {
         </div>
         <div className="container-flex-row">
           <h4 className="heading-text">
-            Invertir en el futuro es dejar tu huella
+            Productos a base de CBD, 100% cruelty free.
           </h4>
         </div>
       </div>
+      <Carousel />
     </div>
   );
 };

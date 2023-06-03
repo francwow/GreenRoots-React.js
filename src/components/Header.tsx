@@ -1,18 +1,16 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { navItems } from "./navItems";
+import { navItems } from "../data/navItems";
 import CursorContext from "../context/cursorContext";
 import MenuActiveContext from "../context/menuActiveContext";
 import ScrollContext from "../context/scrollContext";
 import NavigationMenu from "./NavigationMenu";
 import { HeaderProps } from "../types/Types";
-import { useMediaQuery } from "usehooks-ts";
 
 const Header = (props: HeaderProps) => {
   const hoverLink = useContext(CursorContext);
   const menuActive = useContext(MenuActiveContext);
   const scrollDown = useContext(ScrollContext);
-  const matches = useMediaQuery("(min-width: 768px)");
 
   return (
     <div
@@ -23,6 +21,7 @@ const Header = (props: HeaderProps) => {
       }
     >
       <NavigationMenu
+        deskTop={props.deskTop}
         setMenuActive={props.setMenuActive}
         setHoverLink={props.setHoverLink}
       />

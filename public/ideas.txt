@@ -1,5 +1,5 @@
 // to-do's 
-complete <Header />, update CSS for mobile first, add useMediaQuery() to the project.
+Fix header on desktop, continue developing the carousel and the overall look of the website.
 
 // website names for Green Roots (dominio)
 greenrootscol.co ^

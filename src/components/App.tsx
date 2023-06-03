@@ -8,6 +8,7 @@ import {
 } from "../types/Types";
 import MenuActiveContext from "../context/menuActiveContext";
 import CursorContext from "../context/cursorContext";
+import ScrollContext from "../context/scrollContext";
 import Inicio from "./Inicio";
 import Tienda from "./Tienda";
 import CBD from "./CBD";
@@ -15,7 +16,7 @@ import Nosotros from "./Nosotros";
 import Contacto from "./Contacto";
 import Header from "./Header";
 import Cursor from "./Cursor";
-import ScrollContext from "../context/scrollContext";
+
 import ScrollTop from "./ScrollTop";
 
 function App() {
@@ -50,7 +51,11 @@ function App() {
         <MenuActiveContext.Provider value={menuActive}>
           <CursorContext.Provider value={hoverLink}>
             {deskTop ? <Cursor /> : null}
-            <Header setHoverLink={setHoverLink} setMenuActive={setMenuActive} />
+            <Header
+              deskTop={deskTop}
+              setHoverLink={setHoverLink}
+              setMenuActive={setMenuActive}
+            />
             <Routes>
               <Route path="/" element={<Inicio />} />
               <Route path="/tienda" element={<Tienda />} />

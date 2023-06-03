@@ -1,7 +1,5 @@
 import { useContext, useEffect, useRef } from "react";
-import useMousePosition from "./UseMousePosition";
 import CursorContext from "../context/cursorContext";
-import lerp from "../functions/lerp";
 
 const Cursor = () => {
   const hoverLink = useContext(CursorContext);
@@ -16,8 +14,8 @@ const Cursor = () => {
     currentPoint.x += dx * 0.3;
     currentPoint.y += dy * 0.3;
 
-    cursorRef.current.style.setProperty("--x", currentPoint.x);
-    cursorRef.current.style.setProperty("--y", currentPoint.y);
+    cursorRef.current?.style.setProperty("--x", currentPoint.x);
+    cursorRef.current?.style.setProperty("--y", currentPoint.y);
 
     requestAnimationFrame(lerp);
   }
