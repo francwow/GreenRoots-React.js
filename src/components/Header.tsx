@@ -1,33 +1,26 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { navItems } from "../data/navItems";
-import CursorContext from "../context/cursorContext";
-import MenuActiveContext from "../context/menuActiveContext";
+import { useContext } from "react";
 import ScrollContext from "../context/scrollContext";
 import NavigationMenu from "./NavigationMenu";
 import { HeaderProps } from "../types/Types";
 
 const Header = (props: HeaderProps) => {
-  const hoverLink = useContext(CursorContext);
-  const menuActive = useContext(MenuActiveContext);
   const scrollDown = useContext(ScrollContext);
 
   return (
-    <div
-      className={
-        scrollDown
-          ? "header container-flex-column scrolled"
-          : "header container-flex-column"
-      }
-    >
+    <div className={scrollDown ? "header scrolled" : "header"}>
+      {props.deskTop ? (
+        <div className="logo-container">
+          <img src="/logo_small.png" alt="Green Roots logo" />
+        </div>
+      ) : null}
       <NavigationMenu
         deskTop={props.deskTop}
         setMenuActive={props.setMenuActive}
         setHoverLink={props.setHoverLink}
       />
 
-      <div className="header-container container-flex-row">
-        {/* <Link
+      {/* <div className="header-container container-flex-row"> */}
+      {/* <Link
           onMouseEnter={() => {
             props.setHoverLink(true);
           }}
@@ -41,7 +34,7 @@ const Header = (props: HeaderProps) => {
           </div>
         </Link> */}
 
-        {/* <div className="burger">
+      {/* <div className="burger">
           <button
             onClick={() => {
               props.setMenuActive(!menuActive);
@@ -53,7 +46,7 @@ const Header = (props: HeaderProps) => {
             <div className="line_3"></div>
           </button>
         </div> */}
-      </div>
+      {/* </div> */}
     </div>
   );
 };

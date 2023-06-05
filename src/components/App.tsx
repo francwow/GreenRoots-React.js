@@ -57,7 +57,16 @@ function App() {
               setMenuActive={setMenuActive}
             />
             <Routes>
-              <Route path="/" element={<Inicio />} />
+              <Route
+                path="/"
+                element={
+                  <Inicio
+                    setHoverLink={setHoverLink}
+                    setMenuActive={setMenuActive}
+                    deskTop={deskTop}
+                  />
+                }
+              />
               <Route path="/tienda" element={<Tienda />} />
               <Route path="/cbd" element={<CBD />} />
               <Route path="/nosotros" element={<Nosotros />} />

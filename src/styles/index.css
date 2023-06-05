@@ -17,10 +17,13 @@
   src: url(/src/fonts/HelveticaNeue\ Bold.ttf);
 }
 
-/* === general styles === */
+/* === mobile first === */
+
+/* general styles */
 html {
   overflow-x: hidden;
-  cursor: none !important;
+  margin: 0;
+  padding: 0;
   background-color: #ffff;
   box-sizing: border-box;
 }
@@ -30,6 +33,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   margin: 0;
+  padding: 0;
   --font-fallback: "HelveticaNeue", Helvetica, Arial;
   --font-body: "Montserrat", var(--font-fallback);
   --font-rebeqa: "Rebeqa";
@@ -77,7 +81,6 @@ ul {
   list-style: none;
 }
 
-/* === mobile first === */
 .main-wrapper {
   height: 200vh;
 }
@@ -114,7 +117,6 @@ ul {
   left: 0;
   height: 50px;
   transform: translate3d(0, 0, 0);
-  justify-content: space-between;
   background-color: var(--dark-green);
   transition: transform 0.3s ease, opacity 0.2s ease;
   z-index: 999;
@@ -141,26 +143,44 @@ ul {
   flex-direction: column;
 }
 
-/* nav */
 .main-nav {
+  position: relative;
   width: 100%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
   background-color: var(--light-green);
 }
 
 .nav-container {
   padding: 0 20px;
+  margin: 0;
   width: 100%;
+  align-items: center;
   justify-content: space-around;
 }
 
 .nav-list-item a {
   font-size: 0.8rem;
+  font-family: var(--font-josefin);
   letter-spacing: 0.5px;
   color: var(--beige);
 }
 
+.social-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-container svg {
+  fill: var(--beige);
+}
+
 /* burger */
-.burger {
+/* .burger {
   height: 50px;
   width: 50px;
   display: flex;
@@ -212,12 +232,15 @@ ul {
 
 .burger-btn:hover {
   cursor: none !important;
-}
+} */
 
 /* <Inicio /> */
 .brand-banner {
-  width: 100%;
+  width: calc(100% - 200px);
   height: 200px;
+  position: fixed;
+  top: 0;
+  right: 0;
   transform: translate3d(0, 50px, 0);
   background-image: url(/background.webp);
   background-position: center;
@@ -241,12 +264,20 @@ ul {
 }
 
 .logo-container {
-  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-container {
+  transform: translate3d(0, 200px, 0);
+  z-index: 99;
+  padding-top: 100px;
+  background-color: white;
 }
 
 /* <Carousel /> */
 .carousel {
-  margin-top: 50px;
   position: relative;
   height: fit-content;
 }
@@ -262,10 +293,10 @@ ul {
 }
 
 .carousel-item {
-  display: none;
   position: absolute;
   height: fit-content;
   inset: 0;
+  opacity: 1;
 }
 
 .item-info {
@@ -290,6 +321,10 @@ ul {
 }
 
 .video {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
 }
 
 .carousel-dots {
@@ -303,27 +338,56 @@ ul {
   background-color: black;
 }
 
+/* === Desktop === */
+
 /* media queries */
 @media screen and (min-width: 961px) {
-  .header {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    transform: translate3d(0, 0, 0);
-    justify-content: space-between;
-    background-color: var(--dark-green);
-    transition: transform 0.3s ease, opacity 0.2s ease;
-    z-index: 999;
+  /* general styles */
+  html {
+    cursor: none !important;
   }
 
   .main-wrapper {
-    margin-left: 250px;
+    margin-left: 200px;
   }
 
+  /* <Header /> */
+  .header {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .main-nav {
+    height: calc(100% - 200px);
+  }
+
+  .nav-container {
+    padding: 0;
+    gap: 30px;
+  }
+
+  .nav-list-item a {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    color: var(--beige);
+  }
+
+  /* <Inicio /> */
   .brand-banner {
     transform: translate3d(0, 0, 0);
+  }
+
+  .heading-text {
+    font-size: 2rem;
+  }
+
+  .logo-container {
+    width: 100%;
+    height: 200px;
+    background-color: var(--dark-green);
   }
 }

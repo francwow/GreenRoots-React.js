@@ -1,10 +1,17 @@
 import { HeaderProps } from "../types/Types";
 import { navItems } from "../data/navItems";
 import { Link } from "react-router-dom";
+import Social from "./Social";
 
 const NavigationMenu = (props: HeaderProps) => {
   return (
-    <nav className="main-nav container-flex-row">
+    <nav
+      className={
+        props.deskTop
+          ? "main-nav container-flex-column"
+          : "main-nav container-flex-row"
+      }
+    >
       <ul
         className={
           props.deskTop
@@ -30,6 +37,7 @@ const NavigationMenu = (props: HeaderProps) => {
           );
         })}
       </ul>
+      {props.deskTop ? <Social setHoverLink={props.setHoverLink} /> : null}
     </nav>
   );
 };
