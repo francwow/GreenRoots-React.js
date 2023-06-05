@@ -20,6 +20,17 @@
 /* === mobile first === */
 
 /* general styles */
+.page-wrapper {
+  opacity: 0;
+  transition: 0.5s ease opacity;
+}
+
+.loaded {
+  opacity: 1;
+  transition: ease opacity;
+  transition-delay: 0.1s;
+}
+
 html {
   overflow-x: hidden;
   margin: 0;
@@ -118,12 +129,13 @@ ul {
   height: 50px;
   transform: translate3d(0, 0, 0);
   background-color: var(--dark-green);
-  transition: transform 0.3s ease, opacity 0.2s ease;
+  transition: transform 0.3s ease, opacity 0.5s ease;
   z-index: 999;
 }
 
 .scrolled {
   opacity: 0.8;
+  filter: blur(0.2px);
   transform: translate3d(0, -40px, 0);
 }
 
@@ -158,6 +170,10 @@ ul {
   width: 100%;
   align-items: center;
   justify-content: space-around;
+}
+
+.nav-list-item {
+  position: relative;
 }
 
 .nav-list-item a {
@@ -366,6 +382,24 @@ ul {
   .nav-container {
     padding: 0;
     gap: 30px;
+  }
+
+  .nav-list-item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: left;
+    height: 1px;
+    background-color: var(--beige);
+    transition: 0.4s ease transform;
+  }
+
+  .nav-list-item:hover::after {
+    transform: scale(1, 1);
+    transform-origin: left;
   }
 
   .nav-list-item a {
