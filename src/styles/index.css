@@ -27,8 +27,8 @@
 
 .loaded {
   opacity: 1;
-  transition: ease opacity;
-  transition-delay: 0.1s;
+  /* transition: ease opacity;
+  transition-delay: 0.1s; */
 }
 
 html {
@@ -257,7 +257,7 @@ ul {
   top: 0;
   right: 0;
   transform: translate3d(0, 50px, 0);
-  background-image: url(/background.webp);
+  background-image: url(../assets/webpImages/background.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

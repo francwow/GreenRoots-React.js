@@ -16,7 +16,6 @@ import Nosotros from "./Nosotros";
 import Contacto from "./Contacto";
 import Header from "./Header";
 import Cursor from "./Cursor";
-
 import ScrollTop from "./ScrollTop";
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
   const [hoverLink, setHoverLink] = useState<CursorContextType>(false);
   const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
   const [pageLoaded, setPageLoaded] = useState<boolean>(false);
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const deskTop = useMediaQuery("(min-width: 961px)");
 
   function scrollHandle() {

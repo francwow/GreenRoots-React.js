@@ -17,7 +17,10 @@ const Inicio = (props: HeaderProps) => {
       >
         {!props.deskTop ? (
           <div className="logo-container">
-            <img src="/logo_small.png" alt="Green Roots logo" />
+            <img
+              src="../assets/webpImages/logo_small.png"
+              alt="Green Roots logo"
+            />
           </div>
         ) : null}
 
