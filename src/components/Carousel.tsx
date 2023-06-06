@@ -11,7 +11,6 @@ const Carousel = () => {
 
     const startCarousel = setInterval(function () {
       if (index === 3) index = 0;
-      console.log(index);
       carouselItems?.forEach((item, i) => {
         if (index === i) {
           item.style.opacity = "1";

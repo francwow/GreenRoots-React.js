@@ -21,14 +21,14 @@
 
 /* general styles */
 .page-wrapper {
-  opacity: 1;
+  opacity: 0;
   transition: 0.5s ease opacity;
 }
 
 .loaded {
   opacity: 1;
-  /* transition: ease opacity;
-  transition-delay: 0.1s; */
+  transition: ease opacity;
+  transition-delay: 0.1s;
 }
 
 html {
@@ -391,7 +391,7 @@ ul {
     bottom: 0;
     width: 100%;
     transform: scale(0, 1);
-    transform-origin: left;
+    transform-origin: right;
     height: 1px;
     background-color: var(--beige);
     transition: 0.4s ease transform;

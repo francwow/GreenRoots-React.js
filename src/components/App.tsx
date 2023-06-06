@@ -17,6 +17,7 @@ import Contacto from "./Contacto";
 import Header from "./Header";
 import Cursor from "./Cursor";
 import ScrollTop from "./ScrollTop";
+import { Images } from "../data/Images";
 
 function App() {
   const [menuActive, setMenuActive] = useState<MenuActiveType>(false);
@@ -38,13 +39,20 @@ function App() {
     });
   }
 
-  // window.onload = () => {
-  //   setPageLoaded(true);
-  // };
-
   useEffect(() => {
     window.history.scrollRestoration = "manual";
+
     scrollHandle();
+
+    window.onload = () => {
+      setPageLoaded(true);
+    };
+
+    Images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+      console.log(img.src);
+    });
   }, []);
 
   return (
