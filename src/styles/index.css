@@ -311,7 +311,13 @@ ul {
   position: absolute;
   height: fit-content;
   inset: 0;
+  opacity: 0;
+  z-index: 0;
+}
+
+.show-item {
   opacity: 1;
+  z-index: 1;
 }
 
 .item-info {

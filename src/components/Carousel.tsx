@@ -29,31 +29,23 @@ const Carousel = () => {
           return (
             <div
               key={item.index}
-              style={
-                index === item.index
-                  ? { opacity: "1", zIndex: "1" }
-                  : { opacity: 0, zIndex: "0" }
-              }
               aria-label="0"
-              className="carousel-item"
+              className={`carousel-item ${
+                index === item.index ? "show-item" : ""
+              }`}
             >
               <div className="item-info"></div>
               <div className="video-container">
                 <figure className="video-figure">
                   <video autoPlay muted loop width={200} className="video">
                     <source type="video/mp4" src={item.video} />
+                    Sorry, your browser does not support embedded videos
                   </video>
                 </figure>
               </div>
             </div>
           );
         })}
-
-        {/* <div className="carousel-dots container-flex-row">
-          <div className="carousel-dot"></div>
-          <div className="carousel-dot"></div>
-          <div className="carousel-dot"></div>
-        </div> */}
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+import aceiteVideo from "../assets/videos/aceite.mp4";
+import chapstickVideo from "../assets/videos/chapstick.mp4";
+import jabonVideo from "../assets/videos/jabon.mp4";
+
 type tiendaItem = {
   name: string;
   video: string;
@@ -7,17 +11,17 @@ type tiendaItem = {
 export const tiendaItems: tiendaItem[] = [
   {
     name: "Aceite",
-    video: "/aceite.mp4",
+    video: aceiteVideo,
     index: 0,
   },
   {
     name: "Jabón líquido",
-    video: "/jabon.mp4",
+    video: jabonVideo,
     index: 1,
   },
   {
     name: "Chapstick",
-    video: "/chapstick.mp4",
+    video: chapstickVideo,
     index: 2,
   },
 ];
