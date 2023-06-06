@@ -38,8 +38,9 @@ const Carousel = () => {
               <div className="video-container">
                 <figure className="video-figure">
                   <video autoPlay muted loop width={200} className="video">
-                    <source type="video/mp4" src={item.video} />
-                    Sorry, your browser does not support embedded videos
+                    <source type="video/mp4" src={item.video1} />
+                    <source type="video/webm" src={item.video2} />
+                    Sorry, your browser does not support embedded videos.
                   </video>
                 </figure>
               </div>
