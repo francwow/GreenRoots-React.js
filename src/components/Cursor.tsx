@@ -14,8 +14,8 @@ const Cursor = () => {
     currentPoint.x += dx * 0.3;
     currentPoint.y += dy * 0.3;
 
-    cursorRef.current?.style.setProperty("--x", currentPoint.x);
-    cursorRef.current?.style.setProperty("--y", currentPoint.y);
+    cursorRef.current?.style.setProperty("--x", `${currentPoint.x}`);
+    cursorRef.current?.style.setProperty("--y", `${currentPoint.y}`);
 
     requestAnimationFrame(lerp);
   }

@@ -5,7 +5,7 @@ import { InstagramIcon } from "./Icons";
 const Social = (props: any) => {
   return (
     <div className="social-container">
-      <div className="icon-container">
+      <div style={{ animationDelay: "0.5s" }} className="icon-container">
         <Link
           onMouseEnter={() => {
             props.setHoverLink(true);
@@ -18,7 +18,7 @@ const Social = (props: any) => {
           <FacebookIcon />
         </Link>
       </div>
-      <div className="icon-container">
+      <div style={{ animationDelay: "0.7s" }} className="icon-container">
         <Link
           onMouseEnter={() => {
             props.setHoverLink(true);

@@ -19,9 +19,13 @@ const NavigationMenu = (props: HeaderProps) => {
             : "nav-container container-flex-row"
         }
       >
-        {navItems.map((item) => {
+        {navItems.map((item, index) => {
           return (
-            <li key={item.name} className="nav-list-item">
+            <li
+              key={item.name}
+              style={{ animationDelay: `${index / 7}s` }}
+              className="nav-list-item"
+            >
               <Link
                 onMouseEnter={() => {
                   props.setHoverLink(true);

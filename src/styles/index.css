@@ -76,12 +76,7 @@ h1 {
 }
 
 a {
-  cursor: none !important;
   text-decoration: none;
-}
-
-a:hover {
-  cursor: none !important;
 }
 
 img {
@@ -175,6 +170,20 @@ ul {
 
 .nav-list-item {
   position: relative;
+  opacity: 0;
+  transform: translate3d(0, -20px, 0);
+  animation: move-down 1s ease forwards;
+}
+
+@keyframes move-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .nav-list-item a {
@@ -190,6 +199,29 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+.icon-container {
+  opacity: 0;
+  transform: scale(0.2);
+  animation: pop-up 0.5s cubic-bezier(0.28, -0.27, 0.62, 1.74) forwards;
+}
+
+@keyframes pop-up {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .icon-container svg {
@@ -267,12 +299,48 @@ ul {
   transition: transform 0.4s ease;
 }
 
+.heading-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-text-container {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  animation: move-in-right 1s ease forwards;
+  transform: translate3d(50px, 0, 0);
+  opacity: 0;
+}
+
+@keyframes move-in-right {
+  from {
+    opacity: 0;
+    transform: translate3d(50px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .heading-text {
   font-family: var(--font-josefin);
   font-weight: 400;
   color: var(--beige);
   margin: 0;
   letter-spacing: 0.4px;
+}
+
+@keyframes page-load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .move-up {
@@ -283,6 +351,20 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: grow 1s ease forwards;
+}
+
+@keyframes grow {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .section-container {
@@ -360,22 +442,20 @@ ul {
   background-color: black;
 }
 
-/* keyframes */
-@keyframes page-load {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 /* === Desktop === */
 
 /* media queries */
 @media screen and (min-width: 961px) {
   /* general styles */
   html {
+    cursor: none !important;
+  }
+
+  a {
+    cursor: none !important;
+  }
+
+  a:hover {
     cursor: none !important;
   }
 
@@ -429,6 +509,10 @@ ul {
   /* <Inicio /> */
   .brand-banner {
     transform: translate3d(0, 0, 0);
+  }
+
+  .heading-container {
+    gap: 10px;
   }
 
   .heading-text {
