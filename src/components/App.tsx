@@ -23,7 +23,7 @@ function App() {
   const [menuActive, setMenuActive] = useState<MenuActiveType>(false);
   const [hoverLink, setHoverLink] = useState<CursorContextType>(false);
   const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
-  const [pageLoaded, setPageLoaded] = useState<boolean>(false);
+  // const [pageLoaded, setPageLoaded] = useState<boolean>(false);
   const deskTop = useMediaQuery("(min-width: 961px)");
 
   function scrollHandle() {
@@ -61,9 +61,7 @@ function App() {
       <ScrollContext.Provider value={scrollDown}>
         <MenuActiveContext.Provider value={menuActive}>
           <CursorContext.Provider value={hoverLink}>
-            <div
-              className={pageLoaded ? "page-wrapper loaded" : "page-wrapper"}
-            >
+            <div className="page-wrapper">
               {deskTop ? <Cursor /> : null}
               <Header
                 deskTop={deskTop}

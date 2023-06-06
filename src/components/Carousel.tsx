@@ -13,18 +13,6 @@ const Carousel = () => {
     return () => clearInterval(startCarousel);
   });
 
-  const clickHandlePlus = () => {
-    setIndex(index + 1);
-    if (index === tiendaItems.length - 1) setIndex(initialState);
-    console.log(index);
-  };
-
-  const clickHandleMinus = () => {
-    setIndex(index - 1);
-    if (index === 0) setIndex(tiendaItems.length - 1);
-    console.log(index);
-  };
-
   const increaseIndex = () => {
     console.log(index); //
     if (index < tiendaItems.length - 1) {
@@ -41,14 +29,18 @@ const Carousel = () => {
           return (
             <div
               key={item.index}
-              style={index === item.index ? { opacity: "1" } : { opacity: 0 }}
+              style={
+                index === item.index
+                  ? { opacity: "1", zIndex: "1" }
+                  : { opacity: 0, zIndex: "0" }
+              }
               aria-label="0"
               className="carousel-item"
             >
               <div className="item-info"></div>
               <div className="video-container">
                 <figure className="video-figure">
-                  <video loop muted autoPlay width={300} className="video">
+                  <video autoPlay muted loop width={300} className="video">
                     <source type="video/mp4" src={item.video} />
                   </video>
                 </figure>
