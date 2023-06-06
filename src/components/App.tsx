@@ -44,9 +44,9 @@ function App() {
 
     scrollHandle();
 
-    window.onload = () => {
-      setPageLoaded(true);
-    };
+    // window.onload = () => {
+    //   setPageLoaded(true);
+    // };
 
     Images.forEach((image) => {
       const img = new Image();

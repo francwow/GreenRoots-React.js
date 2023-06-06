@@ -3,45 +3,52 @@ import { tiendaItems } from "../data/tiendaItems";
 
 const Carousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  // const [playVideo, setPlayVideo] = useState(false);
+  const initialState = 0;
+  const [index, setIndex] = useState(initialState);
 
   useEffect(() => {
-    const carouselItems = carouselRef.current?.childNodes;
-    let index = 0;
-
     const startCarousel = setInterval(function () {
-      if (index === 3) index = 0;
-      carouselItems?.forEach((item, i) => {
-        if (index === i) {
-          item.style.opacity = "1";
-        } else {
-          item.style.opacity = "0";
-        }
-      });
-      index++;
+      increaseIndex();
     }, 5000);
+    return () => clearInterval(startCarousel);
+  });
 
-    return function stopTimer() {
-      clearInterval(startCarousel);
-    };
-  }, []);
+  const clickHandlePlus = () => {
+    setIndex(index + 1);
+    if (index === tiendaItems.length - 1) setIndex(initialState);
+    console.log(index);
+  };
+
+  const clickHandleMinus = () => {
+    setIndex(index - 1);
+    if (index === 0) setIndex(tiendaItems.length - 1);
+    console.log(index);
+  };
+
+  const increaseIndex = () => {
+    console.log(index); //
+    if (index < tiendaItems.length - 1) {
+      setIndex(index + 1);
+    } else {
+      setIndex(initialState);
+    }
+  };
 
   return (
     <div className="carousel">
       <div ref={carouselRef} className="carousel-item-container">
         {tiendaItems.map((item) => {
           return (
-            <div key={item.name} aria-label="0" className="carousel-item">
-              <div className="item-info">{/* <h2>{item.name}</h2> */}</div>
+            <div
+              key={item.index}
+              style={index === item.index ? { opacity: "1" } : { opacity: 0 }}
+              aria-label="0"
+              className="carousel-item"
+            >
+              <div className="item-info"></div>
               <div className="video-container">
                 <figure className="video-figure">
-                  <video
-                    loop
-                    muted
-                    autoPlay={true}
-                    width={300}
-                    className="video"
-                  >
+                  <video loop muted autoPlay width={300} className="video">
                     <source type="video/mp4" src={item.video} />
                   </video>
                 </figure>

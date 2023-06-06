@@ -21,15 +21,16 @@
 
 /* general styles */
 .page-wrapper {
-  opacity: 0;
+  opacity: 1;
+  animation: page-load 0.5s ease forwards;
   /* transition: 0.5s ease opacity; */
 }
 
-.loaded {
+/* .loaded {
   opacity: 1;
   transition: ease opacity;
   transition-delay: 0.1s;
-}
+} */
 
 html {
   overflow-x: hidden;
@@ -350,6 +351,16 @@ ul {
   width: 20px;
   border-radius: 50%;
   background-color: black;
+}
+
+/* keyframes */
+@keyframes page-load {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* === Desktop === */
