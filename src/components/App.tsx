@@ -38,9 +38,9 @@ function App() {
     });
   }
 
-  window.onload = () => {
-    setPageLoaded(true);
-  };
+  // window.onload = () => {
+  //   setPageLoaded(true);
+  // };
 
   useEffect(() => {
     window.history.scrollRestoration = "manual";

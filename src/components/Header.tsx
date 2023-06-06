@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ScrollContext from "../context/scrollContext";
 import NavigationMenu from "./NavigationMenu";
 import { HeaderProps } from "../types/Types";
-import logo from "../assets/webpImages/logo_small.png";
+import logoImage from "../assets/webpImages/logo_small.png";
 
 const Header = (props: HeaderProps) => {
   const scrollDown = useContext(ScrollContext);
@@ -11,7 +11,7 @@ const Header = (props: HeaderProps) => {
     <div className={scrollDown ? "header scrolled" : "header"}>
       {props.deskTop ? (
         <div className="logo-container">
-          <img src={logo} alt="Green Roots logo" />
+          <img src={logoImage} alt="Green Roots logo" />
         </div>
       ) : null}
       <NavigationMenu

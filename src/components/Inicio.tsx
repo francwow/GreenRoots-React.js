@@ -2,6 +2,7 @@ import { useContext } from "react";
 import ScrollContext from "../context/scrollContext";
 import Carousel from "./Carousel";
 import { HeaderProps } from "../types/Types";
+import logoImage from "../assets/webpImages/logo_small.png";
 
 const Inicio = (props: HeaderProps) => {
   const scrollDown = useContext(ScrollContext);
@@ -17,10 +18,7 @@ const Inicio = (props: HeaderProps) => {
       >
         {!props.deskTop ? (
           <div className="logo-container">
-            <img
-              src="../assets/webpImages/logo_small.png"
-              alt="Green Roots logo"
-            />
+            <img src={logoImage} alt="Green Roots logo" />
           </div>
         ) : null}
 
