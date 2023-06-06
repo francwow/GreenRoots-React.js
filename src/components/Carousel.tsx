@@ -40,7 +40,7 @@ const Carousel = () => {
               <div className="item-info"></div>
               <div className="video-container">
                 <figure className="video-figure">
-                  <video autoPlay muted loop width={300} className="video">
+                  <video autoPlay muted loop width={200} className="video">
                     <source type="video/mp4" src={item.video} />
                   </video>
                 </figure>
