@@ -1,4 +1,4 @@
 import backgroundImage from "../assets/webpImages/background.webp";
-import logoImage from "../assets/webpImages/logo_small.png";
+import logoImage from "../assets/webpImages/logo.webp";
 
 export const Images = [backgroundImage, logoImage];

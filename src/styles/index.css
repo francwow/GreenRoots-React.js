@@ -369,6 +369,7 @@ ul {
 }
 
 .section-container {
+  position: relative;
   transform: translate3d(0, 50px, 0);
   z-index: 99;
   background-color: white;
@@ -376,23 +377,25 @@ ul {
 
 /* <Carousel /> */
 .carousel {
-  position: relative;
-  height: fit-content;
-}
-
-.carousel-item-container {
   width: 100%;
-  height: 300px;
-  padding: 30px 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.carousel-item-container {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
 .carousel-item {
   position: absolute;
-  height: fit-content;
+  width: 300px;
   inset: 0;
   opacity: 0;
   z-index: 0;
@@ -521,7 +524,8 @@ ul {
   }
 
   .logo-container {
-    width: 100%;
+    width: 90px;
+    margin: auto;
     height: 200px;
     background-color: var(--dark-green);
   }

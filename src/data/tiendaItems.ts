@@ -1,34 +1,27 @@
-import aceiteVideo1 from "../assets/videos/aceite.mp4";
-import chapstickVideo1 from "../assets/videos/chapstick.mp4";
-import jabonVideo1 from "../assets/videos/jabon.mp4";
-import aceiteVideo2 from "../assets/videos/aceite.webm";
-import chapstickVideo2 from "../assets/videos/chapstick.webm";
-import jabonVideo2 from "../assets/videos/jabon.webm";
+import aceiteImg from "../assets/webpImages/aceite_carousel.webp";
+import jabonImg from "../assets/webpImages/jabon_carousel.webp";
+import chapstickImg from "../assets/webpImages/chapstick_carousel.webp";
 
 type tiendaItem = {
   name: string;
-  video1: string;
-  video2: string;
+  img: string;
   index: number;
 };
 
 export const tiendaItems: tiendaItem[] = [
   {
     name: "Aceite",
-    video1: aceiteVideo1,
-    video2: aceiteVideo2,
+    img: aceiteImg,
     index: 0,
   },
   {
     name: "Jabón líquido",
-    video1: jabonVideo1,
-    video2: jabonVideo2,
+    img: jabonImg,
     index: 1,
   },
   {
     name: "Chapstick",
-    video1: chapstickVideo1,
-    video2: chapstickVideo2,
+    img: chapstickImg,
     index: 2,
   },
 ];
