@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ScrollContext from "../context/scrollContext";
 import Carousel from "./Carousel";
 import { HeaderProps } from "../types/Types";
-import logoImage from "../assets/webpImages/logo_small.png";
+import logoImage from "../assets/webpImages/logo.webp";
 import { headingText1, headingText2 } from "../data/headingTexts";
 
 const Inicio = (props: HeaderProps) => {
