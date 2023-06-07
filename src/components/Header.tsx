@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ScrollContext from "../context/scrollContext";
 import NavigationMenu from "./NavigationMenu";
 import { HeaderProps } from "../types/Types";
-import logoImage from "../assets/webpImages/logo.webp";
+import logoImage from "../assets/webpImages/LOGO.webp";
 
 const Header = (props: HeaderProps) => {
   const scrollDown = useContext(ScrollContext);
