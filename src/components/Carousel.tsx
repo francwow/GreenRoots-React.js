@@ -24,24 +24,22 @@ const Carousel = () => {
 
   return (
     <div className="carousel">
-      <div ref={carouselRef} className="carousel-item-container">
-        {tiendaItems.map((item) => {
-          return (
-            <div
-              key={item.index}
-              aria-label="0"
-              className={`carousel-item ${
-                index === item.index ? "show-item" : ""
-              }`}
-            >
-              <div className="item-info"></div>
-              <div className="img-container">
-                <img src={item.img} alt="GreenRoots product" />
-              </div>
+      {tiendaItems.map((item) => {
+        return (
+          <div
+            key={item.index}
+            aria-label="0"
+            className={`carousel-item ${
+              index === item.index ? "show-item" : ""
+            }`}
+          >
+            <div className="item-info"></div>
+            <div className="img-container">
+              <img src={item.img} alt="GreenRoots product" />
             </div>
-          );
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

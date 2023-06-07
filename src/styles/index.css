@@ -20,7 +20,12 @@
 /* === mobile first === */
 
 /* general styles */
+#root {
+  width: 100%;
+}
+
 .page-wrapper {
+  width: 100%;
   opacity: 1;
   animation: page-load 0.5s ease forwards;
   /* transition: 0.5s ease opacity; */
@@ -122,6 +127,10 @@ ul {
   bottom: auto;
   right: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   height: 50px;
   transform: translate3d(0, 0, 0);
   background-color: var(--dark-green);
@@ -166,6 +175,7 @@ ul {
   width: 100%;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .nav-list-item {
@@ -187,7 +197,7 @@ ul {
 }
 
 .nav-list-item a {
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-family: var(--font-josefin);
   letter-spacing: 0.5px;
   color: var(--beige);
@@ -284,19 +294,23 @@ ul {
 } */
 
 /* <Inicio /> */
-.brand-banner {
-  width: 100%;
-  height: 200px;
-  top: 0;
-  right: 0;
-  transform: translate3d(0, 50px, 0);
+.inicio-modal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  inset: 0;
   background-image: url(../assets/webpImages/background.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   transition: transform 0.4s ease;
+  z-index: 999;
+}
+
+.hide-modal {
+  transform: scale(0, 1);
 }
 
 .heading-container {
@@ -305,8 +319,10 @@ ul {
 }
 
 .heading-text-container {
+  width: 100%;
   display: flex;
-  justify-self: center;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   margin: 0;
   padding: 0;
@@ -328,6 +344,7 @@ ul {
 
 .heading-text {
   font-family: var(--font-josefin);
+  font-size: 1.1rem;
   font-weight: 400;
   color: var(--beige);
   margin: 0;
@@ -343,17 +360,14 @@ ul {
   }
 }
 
-.move-up {
-  transform: translate3d(0, 0, 0);
-}
-
 .logo-container {
-  width: 70px;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   transform: scale(0.5);
+  padding: 10px;
   animation: grow 1s ease forwards;
 }
 
@@ -368,35 +382,59 @@ ul {
   }
 }
 
-.section-container {
+.inicio-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.inicio-list-item a {
+  font-family: var(--font-josefin);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--beige);
+}
+
+.inicio-list-item {
   position: relative;
+  opacity: 0;
+  transform: translate3d(0, -20px, 0);
+  animation: move-down 1s ease forwards;
+}
+
+.section-container {
+  width: 100%;
   transform: translate3d(0, 50px, 0);
   z-index: 99;
-  background-color: white;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: relative;
 }
 
 /* <Carousel /> */
 .carousel {
-  width: 100%;
+  width: calc(300px + 5vw);
+  height: 600px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.carousel-item-container {
-  position: relative;
-  align-self: center;
-  justify-self: center;
-  top: 0;
-  right: 0;
-  left: 0;
+  z-index: 9;
+  overflow: hidden;
 }
 
 .carousel-item {
   position: absolute;
-  width: 300px;
-  inset: 0;
+  top: -50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   opacity: 0;
   z-index: 0;
 }
@@ -511,22 +549,45 @@ ul {
   }
 
   /* <Inicio /> */
-  .brand-banner {
-    transform: translate3d(0, 0, 0);
+  .inicio-modal {
+    justify-content: center;
+    gap: 70px;
   }
 
-  .heading-container {
-    gap: 10px;
+  .inicio-nav {
+    flex-direction: row;
+    gap: 40px;
   }
 
-  .heading-text {
+  .inicio-list-item a {
     font-size: 2rem;
   }
 
-  .logo-container {
-    width: 90px;
-    margin: auto;
-    height: 200px;
-    background-color: var(--dark-green);
+  .inicio-list-item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: right;
+    height: 1px;
+    background-color: var(--beige);
+    transition: 0.4s ease transform;
+  }
+
+  .inicio-list-item:hover::after {
+    transform: scale(1, 1);
+    transform-origin: left;
+  }
+
+  /* <Social /> */
+  .social-container {
+    gap: 30px;
+  }
+
+  .icon-container svg {
+    width: 50px;
+    height: 50px;
   }
 }

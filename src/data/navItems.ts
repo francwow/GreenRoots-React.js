@@ -25,3 +25,22 @@ export const navItems: navItem[] = [
     href: "/contacto",
   },
 ];
+
+export const InicioNavItems: navItem[] = [
+  {
+    name: "TIENDA",
+    href: "/tienda",
+  },
+  {
+    name: "CBD",
+    href: "/cbd",
+  },
+  {
+    name: "NOSOTROS",
+    href: "/nosotros",
+  },
+  {
+    name: "CONTACTO",
+    href: "/contacto",
+  },
+];
