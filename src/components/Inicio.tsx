@@ -1,5 +1,5 @@
 import { HeaderProps } from "../types/Types";
-import logoImage from "../assets/webpImages/logo.webp";
+import logoImage from "../assets/webpImages/LOGO.webp";
 import Social from "./Social";
 import InicioNav from "./InicioNav";
 
