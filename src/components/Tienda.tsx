@@ -1,12 +1,25 @@
-import { HeaderProps } from "../types/Types";
 import Carousel from "./Carousel";
 
-const Tienda = (props: HeaderProps) => {
+const Tienda = (props: any) => {
+  const rotate = props.rotate;
+
   return (
     <div className="main-wrapper">
-      <div className="section-container">
+      <section className="picture-container">
+        <div className="tienda-picture">
+          <div
+            style={{ transform: `rotateZ(${rotate}deg)` }}
+            className="left-dec"
+          ></div>
+          <div
+            style={{ transform: `rotate(-${rotate}deg)` }}
+            className="right-dec"
+          ></div>
+        </div>
+      </section>
+      <section className="section-container">
         <Carousel setHoverLink={props.setHoverLink} deskTop={props.deskTop} />
-      </div>
+      </section>
     </div>
   );
 };

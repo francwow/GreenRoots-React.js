@@ -1,5 +1,5 @@
 // to-do's 
-Fix header on desktop, continue developing the carousel and the overall look of the website.
+Continue exploring the Tienda layout.
 
 // website names for Green Roots (dominio)
 greenrootscol.co ^

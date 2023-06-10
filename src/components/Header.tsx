@@ -12,7 +12,7 @@ const Header = (props: HeaderProps) => {
   const scrollDown = useContext(ScrollContext);
 
   return (
-    <div className={deskTop && scrollDown ? "header scrolled" : "header"}>
+    <div className={!menuActive && scrollDown ? "header scrolled" : "header"}>
       {deskTop ? (
         <>
           <Logo />

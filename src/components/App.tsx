@@ -25,6 +25,8 @@ function App() {
   const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
   // const [pageLoaded, setPageLoaded] = useState<boolean>(false);
   const deskTop = useMediaQuery("(min-width: 961px)");
+  const initialRotation = 0;
+  const [rotate, setRotate] = useState(initialRotation);
 
   useEffect(() => {
     window.history.scrollRestoration = "manual";
@@ -34,17 +36,18 @@ function App() {
       const scrolled = window.scrollY;
       if (scrolled > noScroll) {
         setScrollDown(true);
+        setRotate(rotate - 1);
+        console.log("down");
       } else if (scrolled < noScroll) {
         setScrollDown(false);
+        setRotate(rotate + 1);
+        console.log("up");
       }
       noScroll = scrolled <= 0 ? 0 : scrolled;
+      console.log(rotate);
     }
 
     window.addEventListener("scroll", scrollHandle);
-
-    // window.onload = () => {
-    //   setPageLoaded(true);
-    // };
 
     Images.forEach((image) => {
       const img = new Image();
@@ -84,6 +87,7 @@ function App() {
                   path="/tienda"
                   element={
                     <Tienda
+                      rotate={rotate}
                       setHoverLink={setHoverLink}
                       setMenuActive={setMenuActive}
                       deskTop={deskTop}

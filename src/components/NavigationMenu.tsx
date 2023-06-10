@@ -1,9 +1,8 @@
-import { HeaderProps } from "../types/Types";
 import { navItems } from "../data/navItems";
 import { Link } from "react-router-dom";
 import Social from "./Social";
 
-const NavigationMenu = (props: HeaderProps) => {
+const NavigationMenu = (props: any) => {
   return (
     <nav
       className={

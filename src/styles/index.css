@@ -122,6 +122,20 @@ ul {
   }
 }
 
+.section-container {
+  width: 100%;
+  transform: translate3d(0, 50px, 0);
+  z-index: 99;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+}
+
+.picture-container {
+  width: 100%;
+}
+
 /* cursor */
 .dot {
   --x-px: calc(var(--x) * 1px);
@@ -336,17 +350,13 @@ ul {
   width: 35px;
 }
 
-.burger-btn:hover {
-  cursor: none !important;
-}
-
 /* <Inicio /> */
 .inicio-modal {
   width: 100vw;
   height: 100vh;
   position: absolute;
   inset: 0;
-  background-image: url(../assets/webpImages/background.webp);
+  background-image: url(../assets/webpImages/backgorundInicio.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -454,21 +464,44 @@ ul {
   animation: move-down 1s ease forwards;
 }
 
-.section-container {
-  width: 100%;
-  transform: translate3d(0, 50px, 0);
-  z-index: 99;
-  display: flex;
-  align-items: start;
-  justify-content: center;
+/* <Tienda /> */
+.tienda-picture {
+  background: url(../assets/webpImages/backgroundTienda.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-dec {
+  display: block;
+  position: absolute;
+  top: 80%;
+  right: 50%;
+  width: 70%;
+  height: 350px;
+  background-color: white;
+}
+
+.right-dec {
+  display: block;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 70%;
+  height: 350px;
+  background-color: white;
 }
 
 /* <Carousel /> */
 .carousel {
   width: calc(300px);
   height: 600px;
-  margin-top: 50px;
   position: relative;
   display: flex;
   align-items: center;
@@ -670,6 +703,10 @@ ul {
     font-size: 1.2rem;
     letter-spacing: 0.5px;
     color: var(--beige);
+  }
+
+  .burger-btn:hover {
+    cursor: none !important;
   }
 
   /* <Inicio /> */
