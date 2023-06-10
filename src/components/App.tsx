@@ -26,9 +26,11 @@ function App() {
   // const [pageLoaded, setPageLoaded] = useState<boolean>(false);
   const deskTop = useMediaQuery("(min-width: 961px)");
 
-  function scrollHandle() {
+  useEffect(() => {
+    window.history.scrollRestoration = "manual";
     let noScroll = 0;
-    window.addEventListener("scroll", () => {
+
+    function scrollHandle() {
       const scrolled = window.scrollY;
       if (scrolled > noScroll) {
         setScrollDown(true);
@@ -36,13 +38,9 @@ function App() {
         setScrollDown(false);
       }
       noScroll = scrolled <= 0 ? 0 : scrolled;
-    });
-  }
+    }
 
-  useEffect(() => {
-    window.history.scrollRestoration = "manual";
-
-    scrollHandle();
+    window.addEventListener("scroll", scrollHandle);
 
     // window.onload = () => {
     //   setPageLoaded(true);
@@ -51,8 +49,11 @@ function App() {
     Images.forEach((image) => {
       const img = new Image();
       img.src = image;
-      console.log(img.src);
     });
+
+    return () => {
+      window.removeEventListener("scroll", scrollHandle);
+    };
   }, []);
 
   return (
@@ -79,7 +80,16 @@ function App() {
                     />
                   }
                 />
-                <Route path="/tienda" element={<Tienda />} />
+                <Route
+                  path="/tienda"
+                  element={
+                    <Tienda
+                      setHoverLink={setHoverLink}
+                      setMenuActive={setMenuActive}
+                      deskTop={deskTop}
+                    />
+                  }
+                />
                 <Route path="/cbd" element={<CBD />} />
                 <Route path="/nosotros" element={<Nosotros />} />
                 <Route path="/contacto" element={<Contacto />} />

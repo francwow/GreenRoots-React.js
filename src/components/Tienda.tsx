@@ -1,10 +1,11 @@
+import { HeaderProps } from "../types/Types";
 import Carousel from "./Carousel";
 
-const Tienda = () => {
+const Tienda = (props: HeaderProps) => {
   return (
     <div className="main-wrapper">
       <div className="section-container">
-        <Carousel />
+        <Carousel setHoverLink={props.setHoverLink} deskTop={props.deskTop} />
       </div>
     </div>
   );

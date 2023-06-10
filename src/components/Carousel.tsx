@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { tiendaItems } from "../data/tiendaItems";
 
-const Carousel = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
+const Carousel = (props: any) => {
   const initialState = 0;
   const [index, setIndex] = useState(initialState);
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const startCarousel = setInterval(function () {
@@ -14,7 +14,7 @@ const Carousel = () => {
   });
 
   const increaseIndex = () => {
-    console.log(index); //
+    // console.log(index); //
     if (index < tiendaItems.length - 1) {
       setIndex(index + 1);
     } else {
@@ -33,7 +33,33 @@ const Carousel = () => {
               index === item.index ? "show-item" : ""
             }`}
           >
-            <div className="item-info"></div>
+            <div className="item-info">
+              {props.deskTop ? (
+                <h2
+                  className={`${
+                    hovered && props.deskTop
+                      ? "button-hovered item-header"
+                      : "item-header"
+                  } ${index === item.index ? "fade-in-right" : ""}`}
+                >
+                  {item.name}
+                </h2>
+              ) : null}
+
+              <button
+                onMouseEnter={() => {
+                  setHovered(true);
+                  props.setHoverLink(true);
+                }}
+                onMouseLeave={() => {
+                  setHovered(false);
+                  props.setHoverLink(false);
+                }}
+                className={index === item.index ? "button" : ""}
+              >
+                COMPRAR
+              </button>
+            </div>
             <div className="img-container">
               <img src={item.img} alt="GreenRoots product" />
             </div>

@@ -1,15 +1,12 @@
 import { HeaderProps } from "../types/Types";
-import logoImage from "../assets/webpImages/LOGO.webp";
 import Social from "./Social";
 import InicioNav from "./InicioNav";
+import Logo from "./Logo";
 
 const Inicio = (props: HeaderProps) => {
   return (
     <div className="inicio-modal container-flex-column">
-      <div className="logo-container">
-        <img src={logoImage} alt="Green Roots logo" />
-      </div>
-
+      <Logo />
       <InicioNav setHoverLink={props.setHoverLink} />
       <Social setHoverLink={props.setHoverLink} />
     </div>
