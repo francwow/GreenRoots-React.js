@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import { InicioNavItems } from "../data/navItems";
+import { setHoverLink } from "../types/Types";
 
-const InicioNav = (props: any) => {
+type InicioNav = {
+  setHoverLink: setHoverLink;
+};
+
+const InicioNav = (props: InicioNav) => {
   return (
     <div className="inicio-nav-container">
       <ul className="inicio-nav">

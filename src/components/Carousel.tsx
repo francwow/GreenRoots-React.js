@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { tiendaItems } from "../data/tiendaItems";
+import { deskTop, setHoverLink } from "../types/Types";
 
-const Carousel = (props: any) => {
+type Carousel = {
+  deskTop: deskTop;
+  setHoverLink: setHoverLink;
+};
+
+const Carousel = (props: Carousel) => {
   const initialState = 0;
-  const [index, setIndex] = useState(initialState);
-  const [hovered, setHovered] = useState(false);
+  const [index, setIndex] = useState<number>(initialState);
+  const [hovered, setHovered] = useState<boolean>(false);
 
   useEffect(() => {
     const startCarousel = setInterval(function () {

@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import { FacebookIcon } from "./Icons";
 import { InstagramIcon } from "./Icons";
+import { setHoverLink } from "../types/Types";
 
-const Social = (props: any) => {
+type Social = {
+  setHoverLink: setHoverLink;
+};
+
+const Social = (props: Social) => {
   return (
     <div className="social-container">
       <div style={{ animationDelay: "0.5s" }} className="icon-container">

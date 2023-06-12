@@ -1,8 +1,9 @@
 import { useContext, useEffect, useRef } from "react";
 import CursorContext from "../context/cursorContext";
+import { CursorContextType } from "../types/Types";
 
 const Cursor = () => {
-  const hoverLink = useContext(CursorContext);
+  const hoverLink = useContext<CursorContextType>(CursorContext);
   const cursorRef = useRef<HTMLDivElement>(null);
   const currentPoint = { x: 0, y: 0 };
   const targetPoint = { x: 0, y: 0 };

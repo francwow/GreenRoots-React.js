@@ -1,7 +1,14 @@
+import { deskTop, rotate, setHoverLink } from "../types/Types";
 import Carousel from "./Carousel";
 
-const Tienda = (props: any) => {
-  const rotate = props.rotate;
+type Tienda = {
+  rotate: rotate;
+  setHoverLink: setHoverLink;
+  deskTop: deskTop;
+};
+
+const Tienda = (props: Tienda) => {
+  const { rotate, setHoverLink, deskTop } = props;
 
   return (
     <div className="main-wrapper">
@@ -18,7 +25,7 @@ const Tienda = (props: any) => {
         </div>
       </section>
       <section className="section-container">
-        <Carousel setHoverLink={props.setHoverLink} deskTop={props.deskTop} />
+        <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
       </section>
     </div>
   );

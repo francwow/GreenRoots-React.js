@@ -25,8 +25,9 @@ function App() {
   const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
   // const [pageLoaded, setPageLoaded] = useState<boolean>(false);
   const deskTop = useMediaQuery("(min-width: 961px)");
-  const initialRotation = 0;
-  const [rotate, setRotate] = useState(initialRotation);
+  const [rotate, setRotate] = useState<number>(
+    deskTop ? 700 / (window.scrollY + 100) : 1000 / (window.scrollY + 100)
+  );
 
   useEffect(() => {
     window.history.scrollRestoration = "manual";
@@ -36,15 +37,11 @@ function App() {
       const scrolled = window.scrollY;
       if (scrolled > noScroll) {
         setScrollDown(true);
-        setRotate(rotate - 1);
-        console.log("down");
       } else if (scrolled < noScroll) {
         setScrollDown(false);
-        setRotate(rotate + 1);
-        console.log("up");
       }
       noScroll = scrolled <= 0 ? 0 : scrolled;
-      console.log(rotate);
+      setRotate(700 / (scrolled + 100));
     }
 
     window.addEventListener("scroll", scrollHandle);
@@ -75,13 +72,7 @@ function App() {
               <Routes>
                 <Route
                   path="/"
-                  element={
-                    <Inicio
-                      setHoverLink={setHoverLink}
-                      setMenuActive={setMenuActive}
-                      deskTop={deskTop}
-                    />
-                  }
+                  element={<Inicio setHoverLink={setHoverLink} />}
                 />
                 <Route
                   path="/tienda"
@@ -89,13 +80,30 @@ function App() {
                     <Tienda
                       rotate={rotate}
                       setHoverLink={setHoverLink}
-                      setMenuActive={setMenuActive}
                       deskTop={deskTop}
                     />
                   }
                 />
-                <Route path="/cbd" element={<CBD />} />
-                <Route path="/nosotros" element={<Nosotros />} />
+                <Route
+                  path="/cbd"
+                  element={
+                    <CBD
+                      rotate={rotate}
+                      setHoverLink={setHoverLink}
+                      deskTop={deskTop}
+                    />
+                  }
+                />
+                <Route
+                  path="/nosotros"
+                  element={
+                    <Nosotros
+                      rotate={rotate}
+                      setHoverLink={setHoverLink}
+                      deskTop={deskTop}
+                    />
+                  }
+                />
                 <Route path="/contacto" element={<Contacto />} />
               </Routes>
             </div>

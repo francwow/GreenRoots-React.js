@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Social from "./Social";
 import MenuActiveContext from "../context/menuActiveContext";
+import { setHoverLink, setMenuActive } from "../types/Types";
 
-const NavigationMobile = (props: any) => {
+type NavMenu = {
+  setHoverLink: setHoverLink;
+  setMenuActive: setMenuActive;
+};
+
+const NavMenu = (props: NavMenu) => {
+  const { setHoverLink, setMenuActive } = props;
   const menuActive = useContext(MenuActiveContext);
 
   return (
@@ -20,7 +27,13 @@ const NavigationMobile = (props: any) => {
                   className="nav-list-item"
                 >
                   <Link
-                    onClick={() => props.setMenuActive(false)}
+                    onMouseEnter={() => {
+                      props.setHoverLink(true);
+                    }}
+                    onMouseLeave={() => {
+                      props.setHoverLink(false);
+                    }}
+                    onClick={() => setMenuActive(false)}
                     to={item.href}
                   >
                     {item.name}
@@ -29,11 +42,11 @@ const NavigationMobile = (props: any) => {
               );
             })}
           </ul>
-          <Social />
+          <Social setHoverLink={setHoverLink} />
         </div>
       ) : null}
     </>
   );
 };
 
-export default NavigationMobile;
+export default NavMenu;
