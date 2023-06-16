@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { tiendaItems } from "../data/tiendaItems";
 import { deskTop, setHoverLink } from "../types/Types";
+import LanguageContext from "../context/EnglishContext";
 
 type Carousel = {
   deskTop: deskTop;
@@ -8,6 +9,7 @@ type Carousel = {
 };
 
 const Carousel = (props: Carousel) => {
+  const language = useContext(LanguageContext);
   const initialState = 0;
   const [index, setIndex] = useState<number>(initialState);
   const [hovered, setHovered] = useState<boolean>(false);
@@ -48,7 +50,7 @@ const Carousel = (props: Carousel) => {
                       : "item-header"
                   } ${index === item.index ? "fade-in-right" : ""}`}
                 >
-                  {item.name}
+                  {language === "ES" ? item.nameES : item.nameEN}
                 </h2>
               ) : null}
 
@@ -63,7 +65,7 @@ const Carousel = (props: Carousel) => {
                 }}
                 className={index === item.index ? "button" : ""}
               >
-                COMPRAR
+                {language === "ES" ? "COMPRAR" : "BUY"}
               </button>
             </div>
             <div className="img-container">

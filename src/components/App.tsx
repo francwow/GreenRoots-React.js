@@ -1,29 +1,27 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { useMediaQuery } from "usehooks-ts";
 import {
   MenuActiveType,
   CursorContextType,
   ScrollContextType,
+  LanguageContextType,
 } from "../types/Types";
 import MenuActiveContext from "../context/menuActiveContext";
 import CursorContext from "../context/cursorContext";
 import ScrollContext from "../context/scrollContext";
-import Inicio from "./Inicio";
-import Tienda from "./Tienda";
-import CBD from "./CBD";
-import Nosotros from "./Nosotros";
-import Contacto from "./Contacto";
+import EnglishContext from "../context/EnglishContext";
 import Header from "./Header";
 import Cursor from "./Cursor";
 import ScrollTop from "./ScrollTop";
+import Routing from "./Routing";
 import { Images } from "../data/Images";
 
 function App() {
   const [menuActive, setMenuActive] = useState<MenuActiveType>(false);
   const [hoverLink, setHoverLink] = useState<CursorContextType>(false);
   const [scrollDown, setScrollDown] = useState<ScrollContextType>(false);
-  // const [pageLoaded, setPageLoaded] = useState<boolean>(false);
+  const [language, setLanguage] = useState<LanguageContextType>("ES");
   const deskTop = useMediaQuery("(min-width: 961px)");
   const [rotate, setRotate] = useState<number>(
     deskTop ? 700 / (window.scrollY + 100) : 1000 / (window.scrollY + 100)
@@ -59,57 +57,30 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollTop />
-      <ScrollContext.Provider value={scrollDown}>
-        <MenuActiveContext.Provider value={menuActive}>
-          <CursorContext.Provider value={hoverLink}>
-            <div className="page-wrapper">
-              {deskTop ? <Cursor /> : null}
-              <Header
-                deskTop={deskTop}
-                setHoverLink={setHoverLink}
-                setMenuActive={setMenuActive}
-              />
-              <Routes>
-                <Route
-                  path="/"
-                  element={<Inicio setHoverLink={setHoverLink} />}
+      <EnglishContext.Provider value={language}>
+        <ScrollContext.Provider value={scrollDown}>
+          <MenuActiveContext.Provider value={menuActive}>
+            <CursorContext.Provider value={hoverLink}>
+              <div className="page-wrapper">
+                {deskTop ? <Cursor /> : null}
+                <Header
+                  setLanguage={setLanguage}
+                  deskTop={deskTop}
+                  setHoverLink={setHoverLink}
+                  setMenuActive={setMenuActive}
                 />
-                <Route
-                  path="/tienda"
-                  element={
-                    <Tienda
-                      rotate={rotate}
-                      setHoverLink={setHoverLink}
-                      deskTop={deskTop}
-                    />
-                  }
+                <Routing
+                  setHoverLink={setHoverLink}
+                  setMenuActive={setMenuActive}
+                  deskTop={deskTop}
+                  rotate={rotate}
+                  setLanguage={setLanguage}
                 />
-                <Route
-                  path="/cbd"
-                  element={
-                    <CBD
-                      rotate={rotate}
-                      setHoverLink={setHoverLink}
-                      deskTop={deskTop}
-                    />
-                  }
-                />
-                <Route
-                  path="/nosotros"
-                  element={
-                    <Nosotros
-                      rotate={rotate}
-                      setHoverLink={setHoverLink}
-                      deskTop={deskTop}
-                    />
-                  }
-                />
-                <Route path="/contacto" element={<Contacto />} />
-              </Routes>
-            </div>
-          </CursorContext.Provider>
-        </MenuActiveContext.Provider>
-      </ScrollContext.Provider>
+              </div>
+            </CursorContext.Provider>
+          </MenuActiveContext.Provider>
+        </ScrollContext.Provider>
+      </EnglishContext.Provider>
     </BrowserRouter>
   );
 }

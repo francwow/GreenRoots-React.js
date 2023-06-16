@@ -5,24 +5,32 @@ import {
   ScrollContextType,
   deskTop,
   setHoverLink,
+  setLanguage,
   setMenuActive,
 } from "../types/Types";
 import MenuActiveContext from "../context/menuActiveContext";
-import NavMenu from "./NavigationMobile";
+import NavMenu from "./NavMenu";
+import Languages from "./Languages";
 
 type Header = {
   setMenuActive: setMenuActive;
   setHoverLink: setHoverLink;
+  setLanguage: setLanguage;
   deskTop: deskTop;
 };
 
 const Header = (props: Header) => {
-  const { setMenuActive, setHoverLink } = props;
+  const { setMenuActive, setHoverLink, setLanguage } = props;
   const menuActive = useContext<MenuActiveType>(MenuActiveContext);
   const scrollDown = useContext<ScrollContextType>(ScrollContext);
 
   return (
     <div className={!menuActive && scrollDown ? "header scrolled" : "header"}>
+      <Languages
+        inicio={false}
+        setLanguage={setLanguage}
+        setHoverLink={setHoverLink}
+      />
       <div className="burger">
         <button
           onMouseEnter={() => {

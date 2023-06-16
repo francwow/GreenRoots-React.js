@@ -4,6 +4,7 @@ import { useContext } from "react";
 import Social from "./Social";
 import MenuActiveContext from "../context/menuActiveContext";
 import { setHoverLink, setMenuActive } from "../types/Types";
+import LanguageContext from "../context/EnglishContext";
 
 type NavMenu = {
   setHoverLink: setHoverLink;
@@ -12,17 +13,18 @@ type NavMenu = {
 
 const NavMenu = (props: NavMenu) => {
   const { setHoverLink, setMenuActive } = props;
+  const language = useContext(LanguageContext);
   const menuActive = useContext(MenuActiveContext);
 
   return (
     <>
       {menuActive ? (
-        <div className="mobile-nav">
+        <div className="main-nav">
           <ul className="nav-container container-flex-column">
             {navItems.map((item, index) => {
               return (
                 <li
-                  key={item.name}
+                  key={language === "ES" ? item.nameES : item.nameEN}
                   style={{ animationDelay: `${index / 7}s` }}
                   className="nav-list-item"
                 >
@@ -33,10 +35,13 @@ const NavMenu = (props: NavMenu) => {
                     onMouseLeave={() => {
                       props.setHoverLink(false);
                     }}
-                    onClick={() => setMenuActive(false)}
+                    onClick={() => {
+                      setMenuActive(false);
+                      setHoverLink(false);
+                    }}
                     to={item.href}
                   >
-                    {item.name}
+                    {language === "ES" ? item.nameES : item.nameEN}
                   </Link>
                 </li>
               );

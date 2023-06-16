@@ -1,5 +1,6 @@
 import { deskTop, rotate, setHoverLink } from "../types/Types";
 import Carousel from "./Carousel";
+import TiendaIcons from "./TiendaIcons";
 
 type Tienda = {
   rotate: rotate;
@@ -25,6 +26,7 @@ const Tienda = (props: Tienda) => {
         </div>
       </section>
       <section className="section-container">
+        <TiendaIcons />
         <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
       </section>
     </div>

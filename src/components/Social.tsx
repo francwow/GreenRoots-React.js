@@ -18,6 +18,9 @@ const Social = (props: Social) => {
           onMouseLeave={() => {
             props.setHoverLink(false);
           }}
+          onClick={() => {
+            props.setHoverLink(false);
+          }}
           to={"https://www.instagram.com/greenrootscolombia/"}
         >
           <FacebookIcon />
@@ -29,6 +32,9 @@ const Social = (props: Social) => {
             props.setHoverLink(true);
           }}
           onMouseLeave={() => {
+            props.setHoverLink(false);
+          }}
+          onClick={() => {
             props.setHoverLink(false);
           }}
           to={"https://www.instagram.com/greenrootscolombia/"}

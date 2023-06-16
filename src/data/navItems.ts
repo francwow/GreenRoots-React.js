@@ -1,46 +1,55 @@
 type navItem = {
-  name: string;
+  nameES: string;
+  nameEN: string;
   href: string;
 };
 
 export const navItems: navItem[] = [
+  // {
+  //   name: "INICIO",
+  //   href: "/",
+  // },
   {
-    name: "INICIO",
-    href: "/",
-  },
-  {
-    name: "TIENDA",
+    nameES: "TIENDA",
+    nameEN: "STORE",
     href: "/tienda",
   },
   {
-    name: "CBD",
+    nameES: "¿QUÉ ES CBD?",
+    nameEN: "WHAT IS CBD?",
     href: "/cbd",
   },
   {
-    name: "NOSOTROS",
+    nameES: "NOSOTROS",
+    nameEN: "ABOUT",
     href: "/nosotros",
   },
   {
-    name: "CONTACTO",
+    nameES: "CONTACTO",
+    nameEN: "CONTACT",
     href: "/contacto",
   },
 ];
 
 export const InicioNavItems: navItem[] = [
   {
-    name: "TIENDA",
+    nameES: "TIENDA",
+    nameEN: "STORE",
     href: "/tienda",
   },
   {
-    name: "CBD",
+    nameES: "¿QUÉ ES CBD?",
+    nameEN: "WHAT IS CBD?",
     href: "/cbd",
   },
   {
-    name: "NOSOTROS",
+    nameES: "NOSOTROS",
+    nameEN: "ABOUT",
     href: "/nosotros",
   },
   {
-    name: "CONTACTO",
+    nameES: "CONTACTO",
+    nameEN: "CONTACT",
     href: "/contacto",
   },
 ];
