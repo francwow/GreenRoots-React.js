@@ -94,7 +94,7 @@ ul {
 }
 
 .main-wrapper {
-  height: 200vh;
+  min-height: 600vh;
 }
 
 .button {
@@ -128,7 +128,6 @@ ul {
 
 .section-container {
   width: 100%;
-  transform: translate3d(0, 50px, 0);
   z-index: 99;
   display: flex;
   flex-direction: column;
@@ -496,38 +495,13 @@ ul {
 }
 
 /* <Tienda /> */
-.tienda-icons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 50px;
-}
-
-.tienda-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 5px;
-  border: 1px solid #516d5847;
-  border-radius: 5px;
-  width: 150px;
-  height: 200px;
-}
-
-.tienda-icon span {
-  color: var(--dark-green);
-}
-
 .tienda-picture {
   background: url(../assets/webpImages/backgroundTienda.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  margin-bottom: 20px;
   width: 100%;
   height: 400px;
   display: flex;
@@ -555,6 +529,47 @@ ul {
   background-color: white;
 }
 
+.tienda-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tienda-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #516d5847;
+  border-radius: 5px;
+  max-width: 150px;
+  height: 200px;
+  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tienda-icon span {
+  color: var(--light-green);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.carousel-wrapper {
+  padding: 50px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  background-color: var(--light-green);
+}
+
 /* <Carousel /> */
 .carousel {
   width: calc(300px);
@@ -563,6 +578,7 @@ ul {
   display: flex;
   align-items: center;
   border-radius: 5px;
+  background-color: white;
   border: 1px solid #01232126;
   justify-content: center;
   z-index: 9;
@@ -838,6 +854,10 @@ ul {
   }
 
   /* <Tienda /> */
+  .tienda-picture {
+    margin-bottom: 50px;
+  }
+
   .tienda-icons {
     flex-direction: row;
   }

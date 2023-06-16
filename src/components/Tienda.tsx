@@ -26,8 +26,10 @@ const Tienda = (props: Tienda) => {
         </div>
       </section>
       <section className="section-container">
-        <TiendaIcons />
-        <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
+        <div className="carousel-wrapper">
+          <TiendaIcons />
+          <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
+        </div>
       </section>
     </div>
   );

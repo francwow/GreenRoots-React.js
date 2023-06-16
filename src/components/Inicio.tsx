@@ -16,7 +16,11 @@ const Inicio = (props: Inicio) => {
     <div className="inicio-modal container-flex-column">
       <Logo />
       <InicioNav setHoverLink={setHoverLink} />
-      <Languages inicio={true} setLanguage={setLanguage} />
+      <Languages
+        setHoverLink={setHoverLink}
+        inicio={true}
+        setLanguage={setLanguage}
+      />
       <Social setHoverLink={setHoverLink} />
     </div>
   );
