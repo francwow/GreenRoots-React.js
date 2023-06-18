@@ -1,6 +1,6 @@
 import { navItems } from "../data/navItems";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Social from "./Social";
 import MenuActiveContext from "../context/menuActiveContext";
 import { setHoverLink, setMenuActive } from "../types/Types";

@@ -59,7 +59,16 @@ const Routing = (props: Routing) => {
           />
         }
       />
-      <Route path="/contacto" element={<Contacto />} />
+      <Route
+        path="/contacto"
+        element={
+          <Contacto
+            rotate={rotate}
+            setHoverLink={setHoverLink}
+            deskTop={deskTop}
+          />
+        }
+      />
     </Routes>
   );
 };

@@ -1,4 +1,5 @@
 import { deskTop, rotate, setHoverLink } from "../types/Types";
+import Footer from "./Footer";
 
 type Nosotros = {
   rotate: rotate;
@@ -23,6 +24,7 @@ const Nosotros = (props: Nosotros) => {
           ></div>
         </div>
       </section>
+      <Footer deskTop={deskTop} setHoverLink={setHoverLink} />
     </div>
   );
 };

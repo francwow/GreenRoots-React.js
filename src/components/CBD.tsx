@@ -1,4 +1,5 @@
 import { deskTop, rotate, setHoverLink } from "../types/Types";
+import Footer from "./Footer";
 
 type CBD = {
   rotate: rotate;
@@ -23,6 +24,7 @@ const CBD = (props: CBD) => {
           ></div>
         </div>
       </section>
+      <Footer deskTop={deskTop} setHoverLink={setHoverLink} />
     </div>
   );
 };
