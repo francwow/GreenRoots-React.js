@@ -109,6 +109,7 @@ ul {
   width: 150px;
   height: 50px;
   opacity: 0;
+  margin-top: 15px;
   cursor: pointer;
   animation: fade-in forwards ease-in 0.5s 0.7s;
 }
@@ -518,7 +519,7 @@ ul {
   right: 50%;
   width: 70%;
   height: 350px;
-  background-color: white;
+  background-color: var(--light-green);
 }
 
 .right-dec {
@@ -528,11 +529,99 @@ ul {
   left: 50%;
   width: 70%;
   height: 350px;
-  background-color: white;
+  background-color: var(--light-green);
+}
+
+.tienda-copy-container {
+  background-color: var(--light-green);
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0;
+}
+
+.copy-background-one {
+  border-radius: 41% 59% 51% 49% / 39% 52% 48% 61%;
+  background-color: var(--dark-green);
+  opacity: 0.4;
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  width: calc(350px + 5vw);
+  height: 350px;
+  animation: border-radius-one 5s infinite ease;
+}
+
+.copy-background-two {
+  border-radius: 40% 60% 51% 49% / 68% 32% 68% 32%;
+  background-color: var(--dark-green);
+  opacity: 0.7;
+  z-index: 1;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  width: calc(350px + 5vw);
+  height: 350px;
+  animation: border-radius-two 5s infinite ease;
+}
+
+@keyframes border-radius-one {
+  0% {
+    border-radius: 41% 59% 51% 49% / 39% 52% 48% 61%;
+  }
+
+  50% {
+    border-radius: 62% 38% 68% 32% / 39% 56% 44% 61%;
+  }
+
+  100% {
+    border-radius: 41% 59% 51% 49% / 39% 52% 48% 61%;
+  }
+}
+
+@keyframes border-radius-two {
+  0% {
+    border-radius: 40% 60% 51% 49% / 68% 32% 68% 32%;
+  }
+
+  50% {
+    border-radius: 62% 38% 68% 32% / 39% 56% 44% 61%;
+  }
+
+  100% {
+    border-radius: 40% 60% 51% 49% / 68% 32% 68% 32%;
+  }
+}
+
+.tienda-copy {
+  max-width: 350px;
+  z-index: 999;
+}
+
+.tienda-copy h2 {
+  padding: 0 10px;
+  color: var(--beige);
+  text-align: center;
+}
+
+.tienda-copy p {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0 20px;
+  max-width: 600px;
+  color: white;
+  line-height: 1.4;
 }
 
 .tienda-icons {
   display: grid;
+  gap: 10px;
   /* flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -545,10 +634,10 @@ ul {
 .tienda-icon {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
-  padding: 5px;
+  padding: 10px;
   background-color: white;
   border: 1px solid #516d5847;
   border-radius: 5px;
@@ -577,7 +666,7 @@ ul {
 /* <Carousel /> */
 .carousel {
   width: calc(300px);
-  height: 500px;
+  height: 580px;
   position: relative;
   display: flex;
   align-items: center;
@@ -599,7 +688,8 @@ ul {
   display: flex;
   padding: 20px;
   flex-direction: column-reverse;
-  justify-content: space-around;
+  justify-content: flex-end;
+  gap: 10px;
   align-items: center;
   transform: translate3d(5%, 0, 0);
 }
@@ -671,9 +761,6 @@ ul {
   transition: 0.4s ease transform;
 }
 
-.img-container {
-}
-
 .img-container img {
   border-radius: 5px;
   box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
@@ -695,14 +782,29 @@ ul {
 }
 
 .carousel-dots {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1s0px;
   gap: 10px;
+  z-index: 999;
 }
 
 .carousel-dot {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
+  border: none;
   border-radius: 50%;
-  background-color: black;
+  border: 2px solid var(--light-green);
+  background-color: white;
+  transition: background-color 0.1s ease;
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: #516d58;
 }
 
 /* <CBD /> */
@@ -752,8 +854,8 @@ ul {
   box-sizing: border-box;
   width: 100%;
   display: flex;
-  padding: 10px;
-  gap: 50px;
+  flex-direction: column;
+  padding: 20px 5px;
   justify-content: center;
   align-items: center;
   background-color: var(--dark-green);
@@ -768,11 +870,12 @@ ul {
 
 .footer-info {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: center;
   align-items: flex-start;
   gap: 10px;
-  max-width: 200px;
+  margin: 30px 0;
+  max-width: 350px;
 }
 
 .footer-info span {
@@ -780,6 +883,16 @@ ul {
   font-size: 0.8rem;
   font-family: var(--font-body);
   margin: 5px;
+}
+
+.info-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .info-item {
@@ -790,6 +903,21 @@ ul {
 
 .info-item span:first-child {
   margin-right: 5px;
+}
+
+.footer-nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.footer-nav-item a {
+  color: var(--beige);
+  text-decoration: none;
+  font-size: 0.8rem;
 }
 
 .footer-wrapper .social-container {
@@ -933,8 +1061,14 @@ ul {
   }
 
   /* <Tienda /> */
-  .tienda-picture {
+  /* .tienda-picture {
     margin-bottom: 50px;
+  } */
+
+  .copy-background-one,
+  .copy-background-two {
+    width: 500px;
+    height: 500px;
   }
 
   .tienda-icons {
@@ -949,10 +1083,12 @@ ul {
   .carousel {
     margin-top: 0;
     width: 600px;
+    height: 550px;
   }
 
   .carousel-item {
     flex-direction: row;
+    margin-bottom: 50px;
     justify-content: space-around;
     align-items: center;
   }
@@ -981,6 +1117,15 @@ ul {
     flex-basis: 50%;
   }
 
+  .carousel-dots {
+    position: absolute;
+    bottom: 30px;
+  }
+
+  .carousel-dot {
+    cursor: none !important;
+  }
+
   /* <Social /> */
   .social-container {
     gap: 30px;
@@ -990,22 +1135,17 @@ ul {
     width: 50px;
     height: 50px;
   }
-}
 
-/* <CBD /> */
+  /* <CBD /> */
 
-/* <Nosotros /> */
+  /* <Nosotros /> */
 
-/* <Contacto /> */
+  /* <Contacto /> */
 
-/* <Footer /> */
-.footer-wrapper {
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  padding: 10px;
-  gap: 50px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--dark-green);
+  /* <Footer /> */
+  .footer-wrapper {
+    flex-direction: row;
+    padding: 10px;
+    gap: 50px;
+  }
 }

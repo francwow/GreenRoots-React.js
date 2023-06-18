@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { tiendaItems } from "../data/tiendaItems";
 import { deskTop, setHoverLink } from "../types/Types";
 import LanguageContext from "../context/EnglishContext";
@@ -74,6 +74,21 @@ const Carousel = (props: Carousel) => {
           </div>
         );
       })}
+      <div className="carousel-dots">
+        {tiendaItems.map((item) => {
+          return (
+            <button
+              onClick={() => {
+                setIndex(item.index);
+              }}
+              key={item.index}
+              className={
+                item.index === index ? "carousel-dot clicked" : "carousel-dot"
+              }
+            ></button>
+          );
+        })}
+      </div>
     </div>
   );
 };

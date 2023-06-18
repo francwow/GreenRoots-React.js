@@ -1,5 +1,5 @@
 // to-do's 
-Continue exploring the Tienda layout.
+Continue exploring the Tienda layout. Margins, footer sizes on desktop, languages, etc.
 
 // website names for Green Roots (dominio)
 greenrootscol.co ^

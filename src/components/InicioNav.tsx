@@ -17,7 +17,7 @@ const InicioNav = (props: InicioNav) => {
         {InicioNavItems.map((item, index) => {
           return (
             <li
-              key={language === "ES" ? item.nameES : item.nameEN}
+              key={index}
               style={{ animationDelay: `${index / 7}s` }}
               className="inicio-list-item"
             >

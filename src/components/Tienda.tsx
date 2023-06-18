@@ -27,6 +27,20 @@ const Tienda = (props: Tienda) => {
         </div>
       </section>
       <section className="section-container">
+        <div className="tienda-copy-container">
+          <div className="copy-background-one"></div>
+          <div className="copy-background-two"></div>
+          <div className="tienda-copy">
+            {" "}
+            <h2>Ofrecemos productos 100% naturales y 100% colombianos.</h2>
+            <p>
+              Green Roots ofrece productos totalmente naturales, creados a base
+              de CBD y sin químicos. Al comprar nuestros productos estás
+              ayudando a reducir tu propia huella de CO2 ya que somos una
+              empresa{" "}
+            </p>
+          </div>
+        </div>
         <div className="carousel-wrapper">
           <TiendaIcons />
           <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />

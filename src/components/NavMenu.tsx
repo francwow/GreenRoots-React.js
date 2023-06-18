@@ -24,7 +24,7 @@ const NavMenu = (props: NavMenu) => {
             {navItems.map((item, index) => {
               return (
                 <li
-                  key={language === "ES" ? item.nameES : item.nameEN}
+                  key={index}
                   style={{ animationDelay: `${index / 7}s` }}
                   className="nav-list-item"
                 >
