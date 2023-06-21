@@ -96,6 +96,7 @@ ul {
 .main-wrapper {
   /* overflow-x: scroll; */
   box-sizing: border-box;
+  position: relative;
 }
 
 .button {
@@ -129,13 +130,14 @@ ul {
 }
 
 .section-container {
+  gap: 50px;
   width: 100%;
-  z-index: 99;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 50px 0;
 }
 
 .picture-container {
@@ -295,6 +297,7 @@ ul {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  z-index: 9999;
 }
 
 /* .main-nav .logo-container {
@@ -318,7 +321,7 @@ ul {
 
 .language {
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 47% 53% 39% 61% / 48% 59% 41% 52%;
   color: var(--beige);
   cursor: pointer;
   transition: 0.3s ease background-color;
@@ -504,44 +507,177 @@ ul {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  margin-bottom: 20px;
   width: 100%;
   height: 400px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.left-dec {
+.picture-wave {
   display: block;
   position: absolute;
-  top: 80%;
-  right: 50%;
-  width: 70%;
-  height: 350px;
-  background-color: var(--light-green);
+  bottom: calc(0% - 10vw);
+  width: 100%;
+  background-color: transparent;
 }
 
-.right-dec {
-  display: block;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  width: 70%;
-  height: 350px;
-  background-color: var(--light-green);
+.tienda-copy-wrapper {
+  position: relative;
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+}
+
+.main-header-wrapper {
+  white-space: pre-wrap;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: heading-fade 20s infinite ease;
+  animation-delay: 5s;
+}
+
+@keyframes heading-fade {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-header {
+  font-family: var(--font-body);
+  font-size: calc(2rem + 0.5vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  font-style: normal;
+  color: var(--dark-green);
+  height: 100%;
+  transform: translate3d(0, 0, 0);
+  animation: copy-fade 20s infinite ease;
+  animation-delay: 5s;
+}
+
+@keyframes copy-fade {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(0, 3%, 0);
+  }
+  15% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0;
+    transform: translate3d(0, 3%, 0);
+  }
+
+  75% {
+    transform: translate3d(0, 0, 0);
+  }
+  77% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.product-copy-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
+  max-width: calc(300px + 10vw);
+  height: 400px;
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
+  transition: 1s ease all;
+}
+
+.tienda-product {
+  flex-basis: 50%;
+  max-width: calc(300px + 10vw);
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+  transition: 1s ease all;
+}
+
+.tienda-product img {
+  animation: border-radius-two 3s infinite ease;
 }
 
 .tienda-copy-container {
   background-color: var(--light-green);
   position: relative;
   width: 100%;
-  height: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 0;
+}
+
+.tienda-copy {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 70px 0;
+  width: calc(300px + 15vw);
+  height: calc(300px + 15vw);
+  position: relative;
+  z-index: 999;
+}
+
+.tienda-copy h2 {
+  padding: 0 10px;
+  color: var(--beige);
+  text-align: center;
+  font-size: calc(1.1rem + 0.5vw);
+}
+
+.tienda-copy p {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: 0 20px;
+  color: white;
+  line-height: 1.4;
+  font-size: calc(0.8rem + 0.5vw);
 }
 
 .copy-background-one {
@@ -552,9 +688,9 @@ ul {
   position: absolute;
   margin: auto;
   inset: 0;
-  width: calc(350px + 5vw);
-  height: 350px;
-  animation: border-radius-one 5s infinite ease;
+  width: calc(300px + 10vw);
+  height: calc(300px + 10vw);
+  animation: border-radius-one 4s infinite ease;
 }
 
 .copy-background-two {
@@ -565,9 +701,41 @@ ul {
   position: absolute;
   margin: auto;
   inset: 0;
-  width: calc(350px + 5vw);
-  height: 350px;
+  width: calc(300px + 10vw);
+  height: calc(300px + 10vw);
   animation: border-radius-two 5s infinite ease;
+}
+
+.tienda-arrow {
+  transform: rotate(112deg);
+  margin: 30px;
+}
+
+.arrow-svg {
+}
+
+.arrow-path {
+  stroke: none;
+  stroke-width: 1;
+  stroke-dasharray: none;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  fill: #ffad2a;
+  fill-rule: nonzero;
+  opacity: 1;
+}
+
+.arrow-g {
+  stroke: none;
+  stroke-width: 0;
+  stroke-dasharray: none;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 10;
+  fill: none;
+  fill-rule: nonzero;
+  opacity: 1;
 }
 
 @keyframes border-radius-one {
@@ -598,30 +766,10 @@ ul {
   }
 }
 
-.tienda-copy {
-  max-width: 350px;
-  z-index: 999;
-}
-
-.tienda-copy h2 {
-  padding: 0 10px;
-  color: var(--beige);
-  text-align: center;
-}
-
-.tienda-copy p {
-  text-align: center;
-  font-family: var(--font-body);
-  font-weight: 600;
-  padding: 0 20px;
-  max-width: 600px;
-  color: white;
-  line-height: 1.4;
-}
-
 .tienda-icons {
   display: grid;
   gap: 10px;
+  position: relative;
   /* flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -629,6 +777,13 @@ ul {
   flex-wrap: wrap; */
   grid-template-columns: repeat(2, 120px);
   grid-template-rows: repeat(2, 170px);
+  border: 1px solid #516d5847;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.3);
+  transform: translate3d(0, 20%, 0);
+  opacity: 0;
+  transition: 1s ease all;
 }
 
 .tienda-icon {
@@ -638,12 +793,9 @@ ul {
   align-items: center;
   text-align: center;
   padding: 10px;
-  background-color: white;
-  border: 1px solid #516d5847;
-  border-radius: 5px;
   max-width: 100px;
   height: 150px;
-  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.3);
+  z-index: 9;
 }
 
 .tienda-icon span {
@@ -652,9 +804,11 @@ ul {
   font-weight: 600;
 }
 
+/* <Carousel /> */
 .carousel-wrapper {
   padding: 50px 0;
   width: 100%;
+  flex-basis: 50%;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -663,7 +817,6 @@ ul {
   background-color: var(--light-green);
 }
 
-/* <Carousel /> */
 .carousel {
   width: calc(300px);
   height: 580px;
@@ -672,9 +825,13 @@ ul {
   align-items: center;
   border-radius: 5px;
   background-color: white;
-  border: 1px solid #01232126;
+  /* border: 1px solid #01232126; */
   justify-content: center;
+  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
   z-index: 9;
+  transform: translate3d(0, 20%, 0);
+  opacity: 0;
+  transition: 1s ease all;
 }
 
 .carousel-item {
@@ -761,11 +918,6 @@ ul {
   transition: 0.4s ease transform;
 }
 
-.img-container img {
-  border-radius: 5px;
-  box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
-}
-
 .video-figure {
   margin: 0;
   display: flex;
@@ -805,6 +957,11 @@ ul {
 
 .clicked {
   background-color: #516d58;
+}
+
+.img-container img {
+  border-radius: 5px;
+  box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* <CBD /> */
@@ -851,6 +1008,7 @@ ul {
 
 /* <Footer /> */
 .footer-wrapper {
+  position: relative;
   box-sizing: border-box;
   width: 100%;
   display: flex;
@@ -859,6 +1017,24 @@ ul {
   justify-content: center;
   align-items: center;
   background-color: var(--dark-green);
+  z-index: 29;
+}
+
+.footer-wave {
+  display: block;
+  position: absolute;
+  bottom: calc(95% - 3vw);
+  width: 100%;
+  background-color: transparent;
+  z-index: 28;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 29;
 }
 
 .footer-wrapper .logo-container {
@@ -889,6 +1065,7 @@ ul {
   margin: 0;
   padding: 0;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   flex-basis: 50%;
   justify-content: center;
@@ -911,7 +1088,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: 10px;
 }
 
 .footer-nav-item a {
@@ -932,10 +1109,15 @@ ul {
 }
 
 .footer-wrapper .social-container svg {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
 }
 
+/* IntersectionOberver */
+.in-view {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 /* === Desktop === */
 
 /* media queries */
@@ -967,6 +1149,10 @@ ul {
   .button:hover {
     background-color: var(--light-green);
     color: white;
+  }
+
+  .section-container {
+    flex-direction: column;
   }
 
   /* <Header /> */
@@ -1065,19 +1251,28 @@ ul {
     margin-bottom: 50px;
   } */
 
-  .copy-background-one,
+  /* .copy-background-one,
   .copy-background-two {
-    width: 500px;
-    height: 500px;
-  }
+    padding: 0 70px;
+  } */
 
   .tienda-icons {
+    display: flex;
     flex-direction: row;
+  }
+
+  .tienda-copy-wrapper {
+    flex-direction: column;
+  }
+
+  .tienda-copy-container {
+    flex-direction: row;
+    width: 100%;
   }
 
   /* <Carousel /> */
   .carousel-wrapper {
-    flex-direction: row-reverse;
+    flex-direction: column-reverse;
   }
 
   .carousel {
@@ -1144,8 +1339,47 @@ ul {
 
   /* <Footer /> */
   .footer-wrapper {
-    flex-direction: row;
-    padding: 10px;
+    flex-direction: column;
     gap: 50px;
   }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-wave {
+    bottom: calc(100% - 10vw);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .section-container {
+    flex-direction: column;
+  }
+
+  .tienda-copy-wrapper {
+    flex-direction: column;
+  }
+
+  .copy-background-one,
+  .copy-background-two {
+    /* width: 400px;
+    height: 400px; */
+  }
+
+  /* .tienda-copy-container {
+    width: 800px;
+    height: 400px;
+    padding: 40px 0;
+  } */
+
+  /* .first-copy {
+    align-self: flex-start;
+  }
+
+  .second-copy {
+    align-self: flex-end;
+  } */
 }

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { tiendaItems } from "../data/tiendaItems";
 import { deskTop, setHoverLink } from "../types/Types";
 import LanguageContext from "../context/EnglishContext";
@@ -9,6 +10,11 @@ type Carousel = {
 };
 
 const Carousel = (props: Carousel) => {
+  const { ref: carousel, inView: carouselInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const language = useContext(LanguageContext);
   const initialState = 0;
   const [index, setIndex] = useState<number>(initialState);
@@ -31,7 +37,10 @@ const Carousel = (props: Carousel) => {
   };
 
   return (
-    <div className="carousel">
+    <div
+      ref={carousel}
+      className={carouselInView ? "carousel in-view" : "carousel"}
+    >
       {tiendaItems.map((item) => {
         return (
           <div
