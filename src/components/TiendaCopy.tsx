@@ -67,10 +67,10 @@ export const TiendaCopy2 = () => {
             productInView ? "tienda-product-two in-view" : "tienda-product"
           }
         >
-          {/* <img
+          <img
             src="../src/assets/webpImages/product2.webp"
             alt="Green Roots product"
-          /> */}
+          />
         </div>
         <div
           ref={tiendaCopy}

@@ -645,14 +645,13 @@ ul {
 
 .tienda-product-two {
   flex-basis: 50%;
-  width: calc(300px + 10vw);
-  height: calc(300px + 10vw);
+  max-width: calc(300px + 10vw);
   opacity: 0;
   transform: translate3d(0, 10%, 0);
   transition: 1s ease all;
 }
 
-.tienda-product img {
+.tienda-product-two img {
   animation: border-radius-two 3s infinite ease;
 }
 
