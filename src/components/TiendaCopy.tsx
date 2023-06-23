@@ -1,5 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import product2 from "../assets/webpImages/product2.webp";
+import product1 from "../assets/webpImages/product1.webp";
 
 export const TiendaCopy = () => {
   const { ref: tiendaProduct, inView: productInView } = useInView({
@@ -36,13 +37,10 @@ export const TiendaCopy = () => {
         <div
           ref={tiendaProduct}
           className={
-            productInView ? "tienda-product-one in-view" : "tienda-product-one"
+            productInView ? "tienda-product in-view" : "tienda-product"
           }
         >
-          {/* <img
-            src="../src/assets/webpImages/product1.webp"
-            alt="Green Roots product"
-          /> */}
+          <img src={product1} alt="Green Roots product" />
         </div>
       </div>
     </div>
@@ -65,7 +63,7 @@ export const TiendaCopy2 = () => {
         <div
           ref={tiendaProduct}
           className={
-            productInView ? "tienda-product-two in-view" : "tienda-product-two"
+            productInView ? "tienda-product in-view" : "tienda-product"
           }
         >
           <img src={product2} alt="Green Roots product" />
