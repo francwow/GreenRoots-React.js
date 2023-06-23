@@ -35,13 +35,13 @@ export const TiendaCopy = () => {
         <div
           ref={tiendaProduct}
           className={
-            productInView ? "tienda-product in-view" : "tienda-product"
+            productInView ? "tienda-product-one in-view" : "tienda-product"
           }
         >
-          <img
+          {/* <img
             src="../src/assets/webpImages/product1.webp"
             alt="Green Roots product"
-          />
+          /> */}
         </div>
       </div>
     </div>
@@ -64,13 +64,13 @@ export const TiendaCopy2 = () => {
         <div
           ref={tiendaProduct}
           className={
-            productInView ? "tienda-product in-view" : "tienda-product"
+            productInView ? "tienda-product-two in-view" : "tienda-product"
           }
         >
-          <img
+          {/* <img
             src="../src/assets/webpImages/product2.webp"
             alt="Green Roots product"
-          />
+          /> */}
         </div>
         <div
           ref={tiendaCopy}

@@ -629,9 +629,24 @@ ul {
   transition: 1s ease all;
 }
 
-.tienda-product {
+.tienda-product-one {
+  background: url(../assets/webpImages/product1.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  width: calc(300px + 10vw);
+  height: calc(300px + 10vw);
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+  animation: border-radius-two 3s infinite ease;
+  transition: 1s ease all;
+}
+
+.tienda-product-two {
   flex-basis: 50%;
-  max-width: calc(300px + 10vw);
+  width: calc(300px + 10vw);
+  height: calc(300px + 10vw);
   opacity: 0;
   transform: translate3d(0, 10%, 0);
   transition: 1s ease all;
@@ -649,7 +664,7 @@ ul {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding: 70px 0;
+  padding: 20px 0;
 }
 
 .tienda-copy {

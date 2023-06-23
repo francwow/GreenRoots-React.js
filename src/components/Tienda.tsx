@@ -3,6 +3,8 @@ import Carousel from "./Carousel";
 import TiendaIcons from "./TiendaIcons";
 import Footer from "./Footer";
 import { TiendaCopy, TiendaCopy2 } from "./TiendaCopy";
+import { useContext } from "react";
+import LanguageContext from "../context/EnglishContext";
 
 type Tienda = {
   rotate: rotate;
@@ -12,15 +14,22 @@ type Tienda = {
 
 const Tienda = (props: Tienda) => {
   const { rotate, setHoverLink, deskTop } = props;
+  const language = useContext(LanguageContext);
 
   return (
     <div style={{ backgroundColor: "#516d58" }} className="main-wrapper">
       <section className="picture-container">
         <div className="tienda-picture">
           <div className="main-header-wrapper">
-            <h1 className="main-header">
-              Productos de CBD, para paz y tranquilidad.
-            </h1>
+            {language === "ES" ? (
+              <h1 className="main-header">
+                Productos de CBD, para paz y tranquilidad.
+              </h1>
+            ) : (
+              <h1 className="main-header">
+                CBD products, for peace and tranquillity.
+              </h1>
+            )}
           </div>
           <div className="picture-wave">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
