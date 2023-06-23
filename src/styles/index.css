@@ -645,6 +645,7 @@ ul {
 
 .tienda-product-two {
   flex-basis: 50%;
+  border-radius: 50%;
   max-width: calc(300px + 10vw);
   opacity: 0;
   transform: translate3d(0, 10%, 0);
