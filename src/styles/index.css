@@ -579,7 +579,7 @@ ul {
   font-style: normal;
   color: var(--dark-green);
   height: 100%;
-  transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 3%, 0);
   animation: copy-fade 20s infinite ease;
   animation-delay: 5s;
 }
@@ -587,11 +587,11 @@ ul {
 @keyframes copy-fade {
   0% {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 3%, 0);
   }
 
   10% {
-    transform: translate3d(0, 3%, 0);
+    transform: translate3d(0, 6%, 0);
   }
   15% {
     opacity: 0;
@@ -603,11 +603,11 @@ ul {
 
   60% {
     opacity: 0;
-    transform: translate3d(0, 3%, 0);
+    transform: translate3d(0, 6%, 0);
   }
 
   75% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 3%, 0);
   }
   77% {
     opacity: 1;
@@ -1004,10 +1004,58 @@ ul {
   align-items: center;
 }
 
+.nosotros-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.nosotros-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  gap: 20px;
+}
+
+.secondary-desc {
+  margin-bottom: 50px;
+}
+
+.desc-info-container {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.desc-info {
+  flex-basis: 50%;
+  max-width: 600px;
+  padding: 15px;
+}
+
+.desc-info p {
+  line-height: 1.5;
+  font-size: calc(0.8rem + 0.3vw);
+}
+
+.desc-img {
+  flex-basis: 50%;
+  max-width: 600px;
+  padding: 15px;
+}
+
+.desc-img img {
+}
+
 /* <Contacto /> */
 .contacto-picture {
-  background: var(--light-green);
-  background-position: 50% 45%;
+  background: url(../assets/webpImages/contactoBackground.webp);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -1028,8 +1076,8 @@ ul {
   padding: 20px;
   margin: 40px;
   opacity: 0;
-  transform: translate3d(0, 20%, 0);
-  transition: 1s ease all;
+  transform: translate3d(0, 10%, 0);
+  transition: 0.7s ease all;
 }
 
 .contacto-heading {
@@ -1045,6 +1093,7 @@ ul {
   justify-content: flex-start;
   text-align: start;
   color: var(--beige);
+  font-weight: 400;
 }
 
 .contacto-social {
@@ -1061,24 +1110,7 @@ ul {
 .contacto-social a {
   color: var(--beige);
   text-decoration: none;
-}
-
-.contacto-social .info-item::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  transform: scale(0, 1);
-  transform-origin: right;
-  height: 1px;
-  background-color: var(--beige);
-  transition: 0.4s ease transform;
-}
-
-.contacto-social .info-item:hover::after {
-  transform: scale(1, 1);
-  transform-origin: left;
+  font-weight: 600;
 }
 
 /* <Footer /> */
@@ -1420,6 +1452,42 @@ ul {
     height: 400px;
   }
 
+  .nosotros-desc {
+    gap: 60px;
+    max-width: 1300px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .secondary-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .desc-info-container {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .desc-img {
+    flex-basis: 35%;
+  }
+
+  .desc-info {
+    flex-basis: 35%;
+  }
+
+  .desc-heading {
+    font-size: 2rem;
+  }
+
+  .desc-info p {
+    font-size: 1.1rem;
+  }
+
   /* <Contacto /> */
   .contacto-picture {
     height: 80vh;
@@ -1442,11 +1510,29 @@ ul {
 
   .contacto-container .info-item {
     text-align: start;
-    font-size: 1.2rem;
+    font-size: calc(1rem + 0.3vw);
   }
 
   .contacto-social {
     gap: 10px;
+  }
+
+  .contacto-social .info-item::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    transform: scale(0, 1);
+    transform-origin: right;
+    height: 1px;
+    background-color: var(--beige);
+    transition: 0.4s ease transform;
+  }
+
+  .contacto-social .info-item:hover::after {
+    transform: scale(1, 1);
+    transform-origin: left;
   }
 
   /* <Footer /> */

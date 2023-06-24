@@ -13,6 +13,10 @@ import tiendaIcon1 from "../assets/webpImages/tienda-icon-01.webp";
 import tiendaIcon2 from "../assets/webpImages/tienda-icon-02.webp";
 import tiendaIcon3 from "../assets/webpImages/tienda-icon-03.webp";
 import tiendaIcon4 from "../assets/webpImages/tienda-icon-04.webp";
+import contactoBackground from "../assets/webpImages/contactoBackground.webp";
+import nosotrosImg from "../assets/webpImages/nosotros.webp";
+import nosotrosImg1 from "../assets/webpImages/nosotros1.webp";
+import nosotrosImg2 from "../assets/webpImages/nosotros2.webp";
 
 export const Images = [
   backgroundImage,
@@ -30,4 +34,8 @@ export const Images = [
   tiendaIcon2,
   tiendaIcon3,
   tiendaIcon4,
+  contactoBackground,
+  nosotrosImg,
+  nosotrosImg1,
+  nosotrosImg2,
 ];

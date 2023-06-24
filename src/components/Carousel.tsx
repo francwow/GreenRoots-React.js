@@ -87,6 +87,12 @@ const Carousel = (props: Carousel) => {
         {tiendaItems.map((item) => {
           return (
             <button
+              onMouseEnter={() => {
+                props.setHoverLink(true);
+              }}
+              onMouseLeave={() => {
+                props.setHoverLink(false);
+              }}
               onClick={() => {
                 setIndex(item.index);
               }}
