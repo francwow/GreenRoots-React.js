@@ -21,6 +21,7 @@ const Social = (props: Social) => {
           onClick={() => {
             props.setHoverLink(false);
           }}
+          target="_blank"
           to={"https://www.instagram.com/greenrootscolombia/"}
         >
           <FacebookIcon />
@@ -37,6 +38,7 @@ const Social = (props: Social) => {
           onClick={() => {
             props.setHoverLink(false);
           }}
+          target="_blank"
           to={"https://www.instagram.com/greenrootscolombia/"}
         >
           <InstagramIcon />

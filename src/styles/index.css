@@ -138,6 +138,7 @@ ul {
   justify-content: center;
   position: relative;
   padding: 50px 0;
+  z-index: 99;
 }
 
 .picture-container {
@@ -508,7 +509,7 @@ ul {
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -566,7 +567,8 @@ ul {
 
 .main-header {
   font-family: var(--font-body);
-  font-size: calc(2rem + 0.5vw);
+  font-size: calc(1.6rem + 0.5vw);
+  margin: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -982,7 +984,7 @@ ul {
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -996,7 +998,7 @@ ul {
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1004,16 +1006,79 @@ ul {
 
 /* <Contacto /> */
 .contacto-picture {
-  background: url(../assets/webpImages/backgorundInicio.webp);
+  background: var(--light-green);
   background-position: 50% 45%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 70vh;
+  transform: translate3d(0, 0, 0);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 20px;
+  margin: 40px;
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
+  transition: 1s ease all;
+}
+
+.contacto-heading {
+  color: var(--beige);
+}
+
+.contacto-container .info-container {
+  align-items: flex-start;
+}
+
+.contacto-container .info-item {
+  position: relative;
+  justify-content: flex-start;
+  text-align: start;
+  color: var(--beige);
+}
+
+.contacto-social {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.contacto-social a {
+  color: var(--beige);
+  text-decoration: none;
+}
+
+.contacto-social .info-item::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  transform: scale(0, 1);
+  transform-origin: right;
+  height: 1px;
+  background-color: var(--beige);
+  transition: 0.4s ease transform;
+}
+
+.contacto-social .info-item:hover::after {
+  transform: scale(1, 1);
+  transform-origin: left;
 }
 
 /* <Footer /> */
@@ -1257,9 +1322,13 @@ ul {
   }
 
   /* <Tienda /> */
-  /* .tienda-picture {
-    margin-bottom: 50px;
-  } */
+  .tienda-picture {
+    height: 400px;
+  }
+
+  .main-header {
+    font-size: calc(2rem + 0.5vw);
+  }
 
   /* .copy-background-one,
   .copy-background-two {
@@ -1342,10 +1411,43 @@ ul {
   }
 
   /* <CBD /> */
+  .cbd-picture {
+    height: 400px;
+  }
 
   /* <Nosotros /> */
+  .nosotros-picture {
+    height: 400px;
+  }
 
   /* <Contacto /> */
+  .contacto-picture {
+    height: 80vh;
+  }
+
+  .contacto-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 100px;
+  }
+
+  .contacto-container .info-container {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .contacto-heading h2 {
+    font-size: 2rem;
+  }
+
+  .contacto-container .info-item {
+    text-align: start;
+    font-size: 1.2rem;
+  }
+
+  .contacto-social {
+    gap: 10px;
+  }
 
   /* <Footer /> */
   .footer-wrapper {
