@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { deskTop, rotate, setHoverLink } from "../types/Types";
-import { DescOneEn, DescOneEs } from "./NosotrosInfo";
+import { DescOne, DescTwo, DescThree } from "./NosotrosInfo";
 import nosotrosImg1 from "../assets/webpImages/nosotros1.webp";
 import nosotrosImg2 from "../assets/webpImages/nosotros2.webp";
 import Footer from "./Footer";
 import LanguageContext from "../context/EnglishContext";
+import { useInView } from "react-intersection-observer";
 
 type Nosotros = {
   rotate: rotate;
@@ -13,6 +14,15 @@ type Nosotros = {
 };
 
 const Nosotros = (props: Nosotros) => {
+  const { ref: descImg, inView: imgInView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const { ref: descImg2, inView: img2InView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   const { deskTop, setHoverLink, rotate } = props;
   const language = useContext(LanguageContext);
 
@@ -45,42 +55,23 @@ const Nosotros = (props: Nosotros) => {
       <section className="section-container">
         <div className="nosotros-container">
           <div className="nosotros-desc">
-            {language === "ES" ? <DescOneEs /> : <DescOneEn />}
-            <div className="desc-img">
+            <DescOne />
+            <div
+              ref={descImg}
+              className={imgInView ? "desc-img in-view" : "desc-img"}
+            >
               <img src={nosotrosImg2} alt="CBD products" />
             </div>
           </div>
           <div className="nosotros-desc secondary-desc">
             <div className="desc-info-container">
-              <div className="desc-info">
-                <h2 className="desc-heading">Misión</h2>
-                <p>
-                  En Green Roots Colombia nos comprometemos a ofrecer productos
-                  de alta calidad, creados a partir de fuentes naturales y
-                  sostenibles con un enfoque de reducción del impacto ambiental
-                  en el mediano plazo. Nuestra prioridad es ofrecer soluciones
-                  amigables con el planeta que esten libres de maltrato animal,
-                  brindando una experiencia de compra responsable, consciente y
-                  con la certeza de que los productos no han sido tratados con
-                  ningún tipo de pesticida, parabenos o producto químico.{" "}
-                </p>
-              </div>
-              <div className="desc-info">
-                <h2 className="desc-heading">Visión</h2>
-                <p>
-                  Green Roots Colombia se proyecta, para el año 2030, a ser la
-                  empresa líder en la industria de productos artesanales con
-                  cannabis (CBD), hechos a mano y libres de crueldad animal,
-                  inspirando a otros a adoptar un enfoque sostenible y
-                  responsable en la producción, consumo y disposición final de
-                  los productos. Buscamos innovar y desarrollar productos que
-                  han sido cultivados respetando los ritmos de la naturaleza sin
-                  manipulación genética y proporcionando beneficios para el
-                  medio ambiente y la comunidad.
-                </p>
-              </div>
+              <DescTwo />
+              <DescThree />
             </div>
-            <div className="desc-img">
+            <div
+              ref={descImg2}
+              className={img2InView ? "desc-img in-view" : "desc-img"}
+            >
               <img src={nosotrosImg1} alt="CBD farmer" />
             </div>
           </div>

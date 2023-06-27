@@ -17,6 +17,7 @@ import contactoBackground from "../assets/webpImages/contactoBackground.webp";
 import nosotrosImg from "../assets/webpImages/nosotros.webp";
 import nosotrosImg1 from "../assets/webpImages/nosotros1.webp";
 import nosotrosImg2 from "../assets/webpImages/nosotros2.webp";
+import cbdImg1 from "../assets/webpImages/cbd1.webp";
 
 export const Images = [
   backgroundImage,
@@ -38,4 +39,5 @@ export const Images = [
   nosotrosImg,
   nosotrosImg1,
   nosotrosImg2,
+  cbdImg1,
 ];

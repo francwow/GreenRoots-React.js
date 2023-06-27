@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { setHoverLink, setLanguage } from "../types/Types";
 import LanguageContext from "../context/EnglishContext";
-import MenuActiveContext from "../context/menuActiveContext";
 
 type Languages = {
   setLanguage: setLanguage;
@@ -12,7 +11,6 @@ type Languages = {
 const Languages = (props: Languages) => {
   const { setLanguage, setHoverLink, inicio } = props;
   const language = useContext(LanguageContext);
-  const menuActive = useContext(MenuActiveContext);
 
   return (
     <div

@@ -990,6 +990,21 @@ ul {
   align-items: center;
 }
 
+.cbd-container {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.cbd-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  gap: 20px;
+}
+
 /* <Nosotros /> */
 .nosotros-picture {
   background: url(../assets/webpImages/backgroundNosotros.webp);
@@ -1029,13 +1044,16 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .desc-info {
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
   flex-basis: 50%;
   max-width: 600px;
   padding: 15px;
+  transition: 1s ease all;
 }
 
 .desc-info p {
@@ -1044,13 +1062,17 @@ ul {
 }
 
 .desc-img {
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
   flex-basis: 50%;
   max-width: 600px;
   padding: 15px;
+  transition: 1s ease all;
 }
 
-.desc-img img {
-}
+/* .desc-img img {
+  animation: border-radius-two 3s infinite ease;
+} */
 
 /* <Contacto /> */
 .contacto-picture {
@@ -1445,6 +1467,23 @@ ul {
   /* <CBD /> */
   .cbd-picture {
     height: 400px;
+  }
+
+  .cbd-container {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .cbd-desc {
+    gap: 60px;
+    max-width: 1300px;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .secondary-cbd-desc {
+    flex-direction: row-reverse;
   }
 
   /* <Nosotros /> */
