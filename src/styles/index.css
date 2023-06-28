@@ -172,14 +172,17 @@ ul {
 /* <Header /> */
 .header {
   position: fixed;
+  box-sizing: border-box;
   top: 0;
   bottom: auto;
   right: 0;
   left: 0;
   display: flex;
+  padding: 0 10px;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 100vw;
   height: 50px;
   transform: translate3d(0, 0, 0);
   background-color: var(--dark-green);
@@ -312,7 +315,7 @@ ul {
 
 .language-container {
   margin: 0;
-  padding: 10px;
+  padding: 0;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -349,6 +352,7 @@ ul {
 
 .burger-btn {
   background-color: transparent;
+  padding: 0 10px;
   width: 100%;
   height: 80%;
   display: flex;
@@ -654,7 +658,7 @@ ul {
 }
 
 .tienda-copy-container {
-  background-color: var(--light-green);
+  background-color: transparent;
   position: relative;
   width: 100%;
   display: flex;
@@ -779,20 +783,18 @@ ul {
 }
 
 .tienda-icons {
-  display: grid;
+  /* display: grid; */
+  display: flex;
   gap: 10px;
+  margin: 50px 0;
   position: relative;
-  /* flex-direction: row;
-  justify-content: center;
+  width: calc(300px + 20vw);
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  gap: 15px;
-  flex-wrap: wrap; */
-  grid-template-columns: repeat(2, 120px);
-  grid-template-rows: repeat(2, 170px);
-  border: 1px solid #516d5847;
-  border-radius: 5px;
-  background-color: white;
-  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 45%);
+  grid-template-rows: repeat(2, auto);
   transform: translate3d(0, 20%, 0);
   opacity: 0;
   transition: 1s ease all;
@@ -802,18 +804,28 @@ ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* align-self: center;
+  justify-self: center; */
   align-items: center;
   text-align: center;
+  min-width: 60px;
+  flex-basis: 45%;
   padding: 10px;
-  max-width: 100px;
-  height: 150px;
+  height: auto;
+  min-height: 170px;
   z-index: 9;
+  border-radius: 5px;
+  background-color: white;
+  box-sizing: border-box;
+  /* box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.3); */
 }
 
 .tienda-icon span {
   color: var(--light-green);
   font-family: var(--font-body);
   font-weight: 600;
+  margin-top: 10px;
+  font-size: 1rem;
 }
 
 /* <Carousel /> */
@@ -825,13 +837,13 @@ ul {
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  gap: 50px;
-  background-color: var(--light-green);
+  gap: 100px;
+  background-color: transparent;
 }
 
 .carousel {
-  width: calc(300px);
-  height: 580px;
+  width: calc(300px + 20vw);
+  height: calc(630px + 25vw);
   position: relative;
   display: flex;
   align-items: center;
@@ -839,7 +851,7 @@ ul {
   background-color: white;
   /* border: 1px solid #01232126; */
   justify-content: center;
-  box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+  /* box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.3); */
   z-index: 9;
   transform: translate3d(0, 20%, 0);
   opacity: 0;
@@ -947,18 +959,18 @@ ul {
 
 .carousel-dots {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1s0px;
-  gap: 10px;
+  margin-top: 10px;
+  gap: 15px;
   z-index: 999;
 }
 
 .carousel-dot {
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   border: none;
   border-radius: 50%;
   border: 2px solid var(--light-green);
@@ -1289,6 +1301,7 @@ ul {
     top: 0;
     bottom: 0;
     right: 0;
+    justify-content: space-around;
     width: 100%;
   }
 
@@ -1390,8 +1403,16 @@ ul {
   } */
 
   .tienda-icons {
+    width: 900px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
+  }
+
+  .tienda-icon {
+    flex-basis: 20%;
+    max-height: 240px;
   }
 
   .tienda-copy-wrapper {
@@ -1410,8 +1431,8 @@ ul {
 
   .carousel {
     margin-top: 0;
-    width: 600px;
-    height: 550px;
+    width: 900px;
+    height: 800px;
   }
 
   .carousel-item {
@@ -1438,7 +1459,8 @@ ul {
     color: var(--dark-green);
     font-family: var(--font-body);
     letter-spacing: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
   }
 
   .img-container {
@@ -1447,7 +1469,7 @@ ul {
 
   .carousel-dots {
     position: absolute;
-    bottom: 30px;
+    bottom: 0;
   }
 
   .carousel-dot {

@@ -22,9 +22,7 @@ const TiendaIcons = () => {
       <div className="icons-background-two"></div> */}
       <div className="tienda-icon">
         <img src={tiendaIcon1} alt="Icon" />
-        <span>
-          {language === "ES" ? "Ingredientes Naturales" : "Natural Ingredients"}
-        </span>
+        <span>{language === "ES" ? "Natural" : "Natural"}</span>
       </div>
       <div className="tienda-icon">
         <img src={tiendaIcon2} alt="Icon" />
