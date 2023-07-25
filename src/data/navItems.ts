@@ -21,7 +21,7 @@ export const navItems: navItem[] = [
   },
   {
     nameES: "NOSOTROS",
-    nameEN: "ABOUT",
+    nameEN: "ABOUT US",
     href: "/nosotros",
   },
   {
@@ -44,7 +44,7 @@ export const InicioNavItems: navItem[] = [
   },
   {
     nameES: "NOSOTROS",
-    nameEN: "ABOUT",
+    nameEN: "ABOUT US",
     href: "/nosotros",
   },
   {

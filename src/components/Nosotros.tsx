@@ -6,6 +6,8 @@ import nosotrosImg2 from "../assets/webpImages/nosotros2.webp";
 import Footer from "./Footer";
 import LanguageContext from "../context/EnglishContext";
 import { useInView } from "react-intersection-observer";
+import CTA from "./CTA";
+import Whatsapp from "./Whatsapp";
 
 type Nosotros = {
   rotate: rotate;
@@ -27,7 +29,8 @@ const Nosotros = (props: Nosotros) => {
   const language = useContext(LanguageContext);
 
   return (
-    <div className="main-wrapper">
+    <div style={{ backgroundColor: "white" }} className="main-wrapper">
+      <Whatsapp setHoverLink={setHoverLink} />
       <section className="picture-container">
         <div className="nosotros-picture">
           <div className="main-header-wrapper">
@@ -60,7 +63,11 @@ const Nosotros = (props: Nosotros) => {
               ref={descImg}
               className={imgInView ? "desc-img in-view" : "desc-img"}
             >
-              <img src={nosotrosImg2} alt="CBD products" />
+              <img
+                className="nosotros-img-one"
+                src={nosotrosImg2}
+                alt="CBD products"
+              />
             </div>
           </div>
           <div className="nosotros-desc secondary-desc">
@@ -72,9 +79,14 @@ const Nosotros = (props: Nosotros) => {
               ref={descImg2}
               className={img2InView ? "desc-img in-view" : "desc-img"}
             >
-              <img src={nosotrosImg1} alt="CBD farmer" />
+              <img
+                className="nosotros-img-two"
+                src={nosotrosImg1}
+                alt="CBD farmer"
+              />
             </div>
           </div>
+          <CTA setHoverLink={setHoverLink} />
         </div>
       </section>
       <Footer deskTop={deskTop} setHoverLink={setHoverLink} />

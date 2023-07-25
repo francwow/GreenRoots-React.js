@@ -1,6 +1,6 @@
-import aceiteImg from "../assets/webpImages/aceite_carousel.webp";
-import jabonImg from "../assets/webpImages/jabon_carousel.webp";
-import chapstickImg from "../assets/webpImages/chapstick_carousel.webp";
+import aceiteImg from "../assets/webpImages/aceite_carousel_cuadrado.webp";
+import jabonImg from "../assets/webpImages/jabon_carousel_cuadrado.webp";
+import chapstickImg from "../assets/webpImages/chapstick_carousel_cuadrado.webp";
 
 type tiendaItem = {
   nameES: string;
@@ -23,8 +23,8 @@ export const tiendaItems: tiendaItem[] = [
     index: 1,
   },
   {
-    nameES: "Chapstick",
-    nameEN: "Chapstick",
+    nameES: "Greenstick",
+    nameEN: "Greenstick",
     img: chapstickImg,
     index: 2,
   },

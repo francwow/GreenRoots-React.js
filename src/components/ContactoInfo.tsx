@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { setHoverLink } from "../types/Types";
+import CTA from "./CTA";
 
 type ContactInfo = {
   contact: (node?: Element | null | undefined) => void;
@@ -38,7 +39,7 @@ export const InfoEs = (props: ContactInfo) => {
           </span>
         </li>
       </ul>
-      <ul className="contacto-social">
+      {/* <ul className="contacto-social">
         <li className="info-item">
           <Link
             onMouseEnter={() => {
@@ -67,7 +68,7 @@ export const InfoEs = (props: ContactInfo) => {
             Facebook
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };
@@ -103,7 +104,7 @@ export const InfoEn = (props: ContactInfo) => {
           </span>
         </li>
       </ul>
-      <ul className="contacto-social">
+      {/* <ul className="contacto-social">
         <li className="info-item">
           <Link
             onMouseEnter={() => {
@@ -132,7 +133,7 @@ export const InfoEn = (props: ContactInfo) => {
             Facebook
           </Link>
         </li>
-      </ul>
+      </ul> */}
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import backgroundImage from "../assets/webpImages/background.webp";
 import backgroundInicio from "../assets/webpImages/backgorundInicio.webp";
 import logoImage from "../assets/webpImages/LOGO.webp";
-import aceiteImage from "../assets/webpImages/aceite_carousel.webp";
 import backgroundCBD from "../assets/webpImages/backgroundCBD.webp";
 import backgroundTienda from "../assets/webpImages/backgroundTienda.webp";
 import backgroundNosotros from "../assets/webpImages/backgroundNosotros.webp";
-import chapstickImage from "../assets/webpImages/chapstick_carousel.webp";
-import jabonImage from "../assets/webpImages/jabon_carousel.webp";
+import aceiteImage from "../assets/webpImages/aceite_carousel_cuadrado.webp";
+import chapstickImage from "../assets/webpImages/chapstick_carousel_cuadrado.webp";
+import jabonImage from "../assets/webpImages/jabon_carousel_cuadrado.webp";
 import product1 from "../assets/webpImages/product1.webp";
 import product2 from "../assets/webpImages/product2.webp";
 import tiendaIcon1 from "../assets/webpImages/tienda-icon-01.webp";
@@ -23,10 +23,10 @@ export const Images = [
   backgroundImage,
   backgroundInicio,
   logoImage,
-  aceiteImage,
   backgroundCBD,
   backgroundTienda,
   backgroundNosotros,
+  aceiteImage,
   chapstickImage,
   jabonImage,
   product1,

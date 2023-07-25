@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import { TiendaCopy, TiendaCopy2 } from "./TiendaCopy";
 import { useContext } from "react";
 import LanguageContext from "../context/EnglishContext";
+import Whatsapp from "./Whatsapp";
 
 type Tienda = {
   rotate: rotate;
@@ -18,6 +19,7 @@ const Tienda = (props: Tienda) => {
 
   return (
     <div style={{ backgroundColor: "white" }} className="main-wrapper">
+      <Whatsapp setHoverLink={setHoverLink} />
       <section className="picture-container">
         <div className="tienda-picture">
           <div className="main-header-wrapper">
@@ -43,13 +45,14 @@ const Tienda = (props: Tienda) => {
         </div>
       </section>
       <section className="section-container">
-        <TiendaCopy />
-        <div className="carousel-wrapper">
+        <div className="tienda-container">
+          <TiendaCopy />
+          <div className="carousel-wrapper">
+            <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
+          </div>
           <TiendaCopy2 />
-          <Carousel setHoverLink={setHoverLink} deskTop={deskTop} />
+          <TiendaIcons />
         </div>
-
-        <TiendaIcons />
       </section>
       <Footer deskTop={deskTop} setHoverLink={setHoverLink} />
     </div>

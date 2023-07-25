@@ -3,6 +3,7 @@ import Social from "./Social";
 import InicioNav from "./InicioNav";
 import Logo from "./Logo";
 import Languages from "./Languages";
+import TiendaIcons from "./TiendaIcons";
 
 type Inicio = {
   setHoverLink: setHoverLink;

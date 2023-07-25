@@ -16,6 +16,7 @@ import Cursor from "./Cursor";
 import ScrollTop from "./ScrollTop";
 import Routing from "./Routing";
 import { Images } from "../data/Images";
+import Whatsapp from "./Whatsapp";
 
 function App() {
   const [menuActive, setMenuActive] = useState<MenuActiveType>(false);

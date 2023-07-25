@@ -5,7 +5,10 @@ import Footer from "./Footer";
 import LanguageContext from "../context/EnglishContext";
 import { DescOne, DescTwo } from "./CBDInfo";
 import cbdImg1 from "../assets/webpImages/cbd1.webp";
+import cbdVideo from "../assets/videos/aceite.mp4";
 import cbdImg2 from "../assets/webpImages/nosotros.webp";
+import CTA from "./CTA";
+import Whatsapp from "./Whatsapp";
 
 type CBD = {
   rotate: rotate;
@@ -27,7 +30,8 @@ const CBD = (props: CBD) => {
   const { rotate, setHoverLink, deskTop } = props;
 
   return (
-    <div className="main-wrapper">
+    <div style={{ backgroundColor: "white" }} className="main-wrapper">
+      <Whatsapp setHoverLink={setHoverLink} />
       <section className="picture-container">
         <div className="cbd-picture">
           <div className="main-header-wrapper">
@@ -56,7 +60,12 @@ const CBD = (props: CBD) => {
               ref={descImg}
               className={imgInView ? "desc-img in-view" : "desc-img"}
             >
-              <img src={cbdImg1} alt="CBD products" />
+              <figure className="cbd-video">
+                <video muted loop autoPlay width={300}>
+                  <source type="video/mp4" src={cbdVideo} />
+                </video>
+              </figure>
+              {/* <img src={cbdImg1} alt="CBD products" /> */}
             </div>
           </div>
           <div className="cbd-desc secondary-cbd-desc">
@@ -68,6 +77,7 @@ const CBD = (props: CBD) => {
               <img src={cbdImg2} alt="CBD products" />
             </div>
           </div>
+          <CTA setHoverLink={setHoverLink} />
         </div>
       </section>
       <Footer deskTop={deskTop} setHoverLink={setHoverLink} />
